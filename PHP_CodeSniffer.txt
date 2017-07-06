@@ -53,27 +53,27 @@ Report Type:-
 ----------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------- used -----------------------------------------------------------------------------
 
-$ php phpcs --report=emacs --report-file=D:/xampp/htdocs/phpmetrics/codesniffer/report/tquest.emacs C:\app\wwwroot
+$ php phpcs --report=emacs --report-file=D:/xampp/htdocs/phpmetrics/codesniffer/report/app.emacs C:\app\wwwroot
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 
 Use our own standard.
 
-php phpcs --standard=tQuest D:\xampp\htdocs\test\cbad.php
+php phpcs --standard=myStandard D:\xampp\htdocs\test\cbad.php
 
 
 ---------------------------------------
 Printing a Diff Report : 
 ---------------------------------------
 
-$php phpcs --standard=tQuest --report=diff D:\xampp\htdocs\test\cbad.php
+$php phpcs --standard=myStandard --report=diff D:\xampp\htdocs\test\cbad.php
 
 ----------------------------------------
 Using the PHP Code Beautifier and Fixer
 ----------------------------------------
 
-$php phpcbf --standard=tQuest --report=diff D:\xampp\htdocs\test\cbad.php --suffix=.fixed
+$php phpcbf --standard=myStandard --report=diff D:\xampp\htdocs\test\cbad.php --suffix=.fixed
 
 
 
