@@ -1,0 +1,79 @@
+Download the code sniffer:
+   git clone https://github.com/squizlabs/PHP_CodeSniffer.git
+cd PHP_CodeSniffer
+php bin/phpcs -h
+php bin/phpcbf -h
+
+
+
+Print report: summary
+---------------------
+$ php phpcs -s --report=summary /path/to/code 
+
+
+Print report: source error
+--------------------------
+
+$ php phpcs -s --report=source /path/to/code
+
+
+Print report: Code Report
+
+$ php phpcs --report=code /path/to/code
+
+
+Print emacs report:
+------------------
+
+$ php phpcs --report=emacs /path/to/code
+
+
+Print report: file: 
+$ phpcs --report=xml --report-file=/path/to/file.xml /path/to/code
+
+
+Report Type:-
+
+    Checkstyle
+    Code
+    CSV
+    Diff
+    Emacs
+    Git Blame
+    HG Blame
+    Information
+    JSON
+    JUnit
+    Notify-Send
+    Source
+    SVN Blame
+    XML
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------- used -----------------------------------------------------------------------------
+
+$ php phpcs --report=emacs --report-file=D:/xampp/htdocs/phpmetrics/codesniffer/report/tquest.emacs C:\app\wwwroot
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+Use our own standard.
+
+php phpcs --standard=tQuest D:\xampp\htdocs\test\cbad.php
+
+
+---------------------------------------
+Printing a Diff Report : 
+---------------------------------------
+
+$php phpcs --standard=tQuest --report=diff D:\xampp\htdocs\test\cbad.php
+
+----------------------------------------
+Using the PHP Code Beautifier and Fixer
+----------------------------------------
+
+$php phpcbf --standard=tQuest --report=diff D:\xampp\htdocs\test\cbad.php --suffix=.fixed
+
+
+
