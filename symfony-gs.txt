@@ -1,0 +1,239 @@
+
+___________ Symfony Get start  ___________________
+
+1. php symfony.phar new gs    : install  symfony.
+
+2. run server.   cd gs> php bin/console run
+    If you wish to run specify port number   gs> php bin/console run 8081
+
+3.
+	
+	                                Bundle
+							         | |
+									 | |
+									 | |
+				---------------------	---------------------
+				-                                           -
+                -                                           -
+				-                                           -
+				Symfony                                  Sensio
+                  -- FrameworkBundle                         -- FrameworkExtraBundle
+                         -- Controller                               --- Configuration
+						      ---  Controller                                 -- Route
+							  
+4.  @Route  Annotations 
+
+ /**
+     * @Route(
+     *     "/articles/{_locale}/{year}/{slug}.{_format}",
+     *     defaults={"_format": "html"},
+     *     requirements={
+     *         "_locale": "en|fr",
+     *         "_format": "html|rss",
+     *         "year": "\d+"
+     *     }
+     * )
+     */
+
+	 
+	Special Routing Parameters
+	--------------------------
+	As you've seen, each routing parameter or default value is eventually available as an argument in the controller method. Additionally, there are four parameters that are special: each adds a unique piece of functionality inside your application:
+
+	_controller
+	As you've seen, this parameter is used to determine which controller is executed when the route is matched.
+	_format
+	Used to set the request format (read more).
+	_fragment
+	Used to set the fragment identifier, the optional last part of a URL that starts with a # character and is used to identify a portion of a document.
+
+	New in version 3.2: The _fragment parameter was introduced in Symfony 3.2.
+	_locale
+	Used to set the locale on the request (read more).
+
+
+	Generate the url in Contrller:
+	-----------------------------
+		 // /blog/my-blog-post
+			$url = $this->generateUrl(
+				'blog_show',
+				array('slug' => 'my-blog-post')
+			);
+			
+	generateUrl method is shortcut code:
+
+		$url = $this->container->get('router')->generate(
+			'blog_show',
+			array('slug' => 'my-blog-post')
+		);
+		
+	Redirecting in Controller:
+	-----------
+		// redirect to the "homepage" route
+		return $this->redirectToRoute('homepage');
+
+		// do a permanent - 301 redirect
+		return $this->redirectToRoute('homepage', array(), 301);
+
+		// redirect to a route with parameters
+		return $this->redirectToRoute('blog_show', array('slug' => 'my-page'));
+
+		// redirect externally
+		return $this->redirect('http://symfony.com/doc');
+		   
+		   
+		The redirectToRoute() method is simply a shortcut that creates a 
+		Response object that specializes in redirecting the user. 
+		It's equivalent to:
+		
+		use Symfony\Component\HttpFoundation\RedirectResponse;
+		public function indexAction()
+		{
+			return new RedirectResponse($this->generateUrl('homepage'));
+		}
+		
+		Rendering Templates
+		-------------------
+		// renders app/Resources/views/lucky/number.html.twig
+			return $this->render('lucky/number.html.twig', array('name' => $name));
+		
+		Managing Errors and 404 Pages in controller
+		-------------------------------------------
+			throw $this->createNotFoundException('The product does not exist');
+		
+		Accessing the Container Directly
+		--------------------------------
+		If you extend the base Controller class, you can access any Symfony service via the get() method. 
+		Here are several common services you might need:
+		
+		$templating = $this->get('templating');
+
+		$router = $this->get('router');
+
+		$mailer = $this->get('mailer');
+
+		// you can also fetch parameters
+		$someParameter = $this->getParameter('some_parameter');
+		
+		
+	    The Request object as a Controller Argument in controller
+		----------------------------------------------------------
+		use Symfony\Component\HttpFoundation\Request;
+		
+		$request->isXmlHttpRequest(); // is it an Ajax request?
+
+		$request->getPreferredLanguage(array('en', 'fr'));
+
+		// retrieve GET and POST variables respectively
+		$request->query->get('page',1);
+		$request->request->get('page');
+
+		// retrieve SERVER variables
+		$request->server->get('HTTP_HOST');
+
+		// retrieves an instance of UploadedFile identified by foo
+		$request->files->get('foo');
+
+		// retrieve a COOKIE value
+		$request->cookies->get('PHPSESSID');
+
+		// retrieve an HTTP request header, with normalized, lowercase keys
+		$request->headers->get('host');
+		$request->headers->get('content_type');
+		
+		Managing the Session
+		--------------------
+		use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+		public function indexAction(SessionInterface $session)
+		{
+			// store an attribute for reuse during a later user request
+			$session->set('foo', 'bar');
+
+			// get the attribute set by another controller in another request
+			$foobar = $session->get('foobar');
+
+			// use a default value if the attribute doesn't exist
+			$filters = $session->get('filters', array());
+		}
+		
+		Flash Messages in controller
+		----------------------------
+		
+			$this->addFlash('notice', 'Your changes were saved!');
+			
+			Print flash message in the view.
+			
+			{# app/Resources/views/base.html.twig #}
+			
+				{# you can read and display just one flash message type... #}
+				{% for message in app.flashes('notice') %}
+					<div class="flash-notice">
+						{{ message }}
+					</div>
+				{% endfor %}
+
+				{# ...or you can read and display every flash message available #}
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="flash-{{ label }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+				
+		JSON Helper
+		-------------------
+		
+		 // returns '{"username":"jane.doe"}' and sets the proper Content-Type header
+    return $this->json(array('username' => 'jane.doe'));
+
+    // the shortcut defines three optional arguments
+    // return $this->json($data, $status = 200, $headers = array(), $context = array());
+	
+	File helper  v> 3.2
+	-----------
+	use Symfony\Component\HttpFoundation\File\File;
+	use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+
+	public function fileAction()
+	{
+		// load the file from the filesystem
+		$file = new File('/path/to/some_file.pdf');
+
+		return $this->file($file);
+
+		// rename the downloaded file
+		return $this->file($file, 'custom_name.pdf');
+
+		// display the file contents in the browser instead of downloading it
+		return $this->file('invoice_3241.pdf', 'my_invoice.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
+	}
+	
+	
+	
+Twig:-
+------
+Twig defines three types of special syntax:
+
+1. {{ ... }}
+"Says something": prints a variable or the result of an expression to the template.
+
+2. {% ... %}
+"Does something": a tag that controls the logic of the template; it is used to execute statements such as for-loops for example.
+
+3. {# ... #}
+"Comment something": it's the equivalent of the PHP /* comment */ syntax. It's used to add single or multi-line comments. The content of the comments isn't included in the rendered pages.
+
+Twig also contains filters, which modify content before being rendered. The following makes the title variable all uppercase before rendering it:
+{{ title|upper }}
+
+
+Twig code will look similar to PHP code, with subtle, nice differences. 
+The following example uses a standard for tag and the cycle() function to print ten div tags, with alternating odd, even classes:
+
+{% for i in 1..10 %}
+    <div class="{{ cycle(['even', 'odd'], i) }}">
+      <!-- some HTML here -->
+    </div>
+{% endfor %}
