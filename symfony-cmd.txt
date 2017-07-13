@@ -1,0 +1,36 @@
+
+___________ Symfony Get start  ___________________
+
+1. php symfony.phar new gs    : install  symfony.
+
+2. run server.   cd gs> php bin/console run
+    If you wish to run specify port number   gs> php bin/console run 8081
+
+3. You can also include assets located in your bundles' Resources/public folder. 
+You will need to run the
+
+php bin/console assets:install target [--symlink] command,
+
+which copies (or symlinks) files into the correct location. (target is by default "web").
+
+4. Clear cache & Assets install 
+    $ php bin/console cache:clear
+    $ php bin/console assets:install
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# install the sonata admin
+---------
+composer require sonata-project/admin-bundle
+composer require sonata-project/doctrine-orm-admin-bundle

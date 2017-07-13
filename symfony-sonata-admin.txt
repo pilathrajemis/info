@@ -1,0 +1,122 @@
+1# install the sonata admin
+---------
+composer require sonata-project/admin-bundle
+composer require sonata-project/doctrine-orm-admin-bundle
+
+2#. enable bundle: in AppKernel @registerBundles
+
+	// The admin requires some twig functions defined in the security
+	// bundle, like is_granted. Register this bundle if it wasn't the case
+	// already.
+	new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+
+	// These are the other bundles the SonataAdminBundle relies on
+	new Sonata\CoreBundle\SonataCoreBundle(),
+	new Sonata\BlockBundle\SonataBlockBundle(),
+	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
+	// And finally, the storage and SonataAdminBundle
+	new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+	new Sonata\AdminBundle\SonataAdminBundle(),
+	
+	
+3#.  Configure the Installed Bundles  in app/config/config.yml
+
+	sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        # ...
+		
+4#. Import Routing Configuration in app/config/routing.yml
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+	
+5#. Enable the “translator” service in app/config/config.yml
+framework:
+    translator: { fallbacks: [en] }
+
+6# Preparing your Environment
+    $ php bin/console cache:clear
+    $ php bin/console assets:install
+	
+7# check installation.
+     php bin/console server:run
+     http://localhost:8000/admin
+	 
+	 
+
+=============================================================  ==================================================
+
+Creating an Admin 
+ 
+2.1 Create a Model
+	For the rest of the tutorial, you’ll need some sort of model. In this tutorial, two very simple Post and Tag entities will be used. Generate them by using these commands:
+	
+	$ php bin/console doctrine:generate:entity --entity="AppBundle:Category" --fields="name:string(255)" --no-interaction
+    $ php bin/console doctrine:generate:entity --entity="AppBundle:BlogPost" --fields="title:string(255) body:text draft:boolean" --no-interaction
+
+2.2 change the database information on  app/config/parameters.yml
+
+	parameters:
+		database_host: 127.0.0.1
+		database_port: null
+		database_name: database_name_go_here
+		database_user: username_go_here
+		database_password: password_go_here
+		database_driver: pdo_sqlsrv
+	
+	for mssql You should update database_driver name in app/config/config.yml
+	
+	Replace 
+	
+	doctrine:
+		dbal:
+			driver: pdo_mysql
+		
+	With
+	
+	doctrine:
+		dbal:
+			driver: '%database_driver%'
+	
+	We added database_driver in parameters.yml
+		
+
+2.3 Apply necessary changes then 
+
+	$ php bin/console doctrine:schema:create
+	
+2.4 Create an Admin Class
+		An Admin class decides which fields to show on a listing, which fields are used to find entries and how the create form will look like. 
+		Each model will have its own Admin class.
+		
+		Create admin class under the AppBundle\Admin\*
+		   Create CategoryAdmin class
+		
+2.5 Register the Admin class in app/config/services.yml
+	You’ve now created an Admin class, but there is currently no way for the SonataAdminBundle to know that this Admin class exists. To tell the SonataAdminBundle of the existence of this Admin class, you have to create a service and tag it with the sonata.admin tag:
+	
+	services:
+    # ...
+    admin.category:
+        class: AppBundle\Admin\CategoryAdmin
+        arguments: [~, AppBundle\Entity\Category, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Category }
+        public: true
+2.6 Register SonataAdmin custom Routes in app/config/routing.yml
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+
+
+	
+
+
+
