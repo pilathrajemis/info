@@ -19,7 +19,9 @@ which copies (or symlinks) files into the correct location. (target is by defaul
     $ php bin/console assets:install
  
 
-
+5. Schema update
+		$ php bin/console doctrine:schema:create
+		$ php bin/console doctrine:schema:update
 
 
 
@@ -35,3 +37,17 @@ which copies (or symlinks) files into the correct location. (target is by defaul
 ---------
 composer require sonata-project/admin-bundle
 composer require sonata-project/doctrine-orm-admin-bundle
+composer require sonata-project/easy-extends-bundle 
+composer require sonata-project/user-bundle --no-update
+composer require friendsofsymfony/user-bundle --no-update
+
+
+
+
+FOS Cmd:
+---------------
+create admin user:
+ php app/console fos:user:create adminuser --super-admin
+
+
+
