@@ -113,10 +113,220 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
-
-
-
 	
 
+3.1. Adding Fields that Reference Other Models
+		You have a couple different choices on how to add fields that reference other models. 
+		The most basic choice is to use the entity field type provided by the DoctrineBundle.
+		This will render a choice field with the available entities as choice.
+		
+		protected function configureFormFields(FormMapper $formMapper)
+		{
+			$formMapper
+				// ...
+				->add('category', 'entity', array(
+					'class' => 'AppBundle\Entity\Category',
+					'property' => 'name',    /* Symfony >= 2.7. You should use choice_label instead. */
+				))
+			;
+		}
+		
+		or  use 'sonata_type_model'  it show add new button with popup model ..
+		
+		$formMapper
+        // ...
+        ->add('category', 'sonata_type_model', array(
+            'class' => 'AppBundle\Entity\Category',
+            'property' => 'name',
+        ))
+    ;
+	
+3.2 Using Groups
+ the title and body fields can belong to the Content group and the category field to a Meta data group. To do this, use the with() method
+
+$formMapper
+        ->with('Content')
+            ->add('title', 'text')
+            ->add('body', 'textarea')
+        ->end()
+
+        ->with('Meta data')
+            ->add('category', 'sonata_type_model', array(
+                'class' => 'AppBundle\Entity\Category',
+                'property' => 'name',
+            ))
+        ->end()
+    ;
+	
+	The first argument is the name/label of the group and the second argument is an array of options. For instance, you can pass HTML classes to the group in order to tweak the styling:
+	
+	 $formMapper
+        ->with('Content', array('class' => 'col-md-9'))
+            // ...
+        ->end()
+        ->with('Meta data', array('class' => 'col-md-3')
+            // ...
+        ->end()
+    ;
+
+3.3 Using Tabs
+
+If you get even more options, you can also use multiple tabs by using the tab() shortcut method:
+
+$formMapper
+    ->tab('Post')
+        ->with('Content', ...)
+            // ...
+        ->end()
+        // ...
+    ->end()
+
+    ->tab('Publish Options')
+        // ...
+    ->end()
+;
+
+3.4 toString() method in the Admin Class:
+After pressing the "Create" button, you probably see a green message like: Item "AppBundleEntityBlogPost:00000000192ba93c000000001b786396" has been successfully created.
+
+This is the default string representation of an object in the SonataAdminBundle. You can change it by defining a toString() method in the Admin class. This receives the object to transform to a string as the first parameter:
+
+  public function toString($object)
+    {
+        return $object instanceof BlogPost
+            ? $object->getTitle()
+            : 'Blog Post'; // shown in the breadcrumb on the create view
+    }
+	
+	
+===============================================
+
+4. List changes
+
+4.1 Show up the list add @configureListFields method in Admin class.
+	protected function configureListFields(ListMapper $list) {
+        $list->add('title')
+               ->add('draft');
+    }
+	
+4.2  To add the link  for edit Should use addIdentifier() method.
+		protected function configureListFields(ListMapper $list) {
+        $list->addIdentifier('title')
+               ->add('draft');
+    }
+
+4.3 Displaying Other Models
+	Now you probably also want the Category to be included in the list. To do that, you need to reference it. You can’t add the category field to the list mapper, as it will then try to show the entity as a string. As you’ve learned in the previous chapter, adding __toString to the entity is not recommended as well.
+	
+	Fortunately, there is an easy way to reference other models by using the dot notation. Using this notation, you can specify which fields you want to show. For instance, category.name will show the name property of the category.
+	
+4.4 Adding Filter/Search Options
+	protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper->add('title');
+    }
+	
+ 4.4.1. Filtering by Category
+ 
+	Filtering by another model’s properties is a little bit more difficult. The add field has 5 arguments:
+	
+	public function add(
+    $name,
+
+    // filter
+    $type = null,
+    array $filterOptions = array(),
+
+    // field
+    $fieldType = null,
+    $fieldOptions = null
+)
+	
+----------------- ---------------------------------- -------------------------  -------------------------------------
+
+5. Dashboard
+	The Dashboard is the main landing page.
+	The Dashboard is, by default, available at /admin/dashboard, which is handled by the SonataAdminBundle:Core:dashboard controller action.
+	The default view file for this action is SonataAdminBundle:Core:dashboard.html.twig, but you can change this in your config.yml:
+	
+	# app/config/config.yml
+	sonata_admin:
+		templates:
+			dashboard: SonataAdminBundle:Core:dashboard.html.twig
+	
+	
+	5.1. Blocks
+		The Dashboard is actually built using Blocks from SonataBlockBundle
+    
+	5.2 The Admin List BlockBundle\SonataBlockBundle
+			The Admin list is a Block that fetches information from the Admin service’s Pool and prints it in the nicely formatted list you have on your default Dashboard. 
+			The Admin list is defined by the sonata.admin.block.admin_list service, which is implemented by the Block\AdminListBlockService class. It is then rendered using the SonataAdminBundle:Block:block_admin_list.html.twig template file.
+    
+	5.3 Configuring the Admin list:
+			There are several ways in which you can configure these groups.
+			
+			1. Using the Admin servive Declaration:
+			
+			[XML]
+				<service id="app.admin.post" class="AppBundle\Admin\PostAdmin">
+					<tag name="sonata.admin" manager_type="orm"
+						group="Content"
+						label="Post" />
+					<argument />
+					<argument>AppBundle\Entity\Post</argument>
+					<argument />
+				</service>
+				
+			[YAML]
+				services:
+					app.admin.post:  # Id
+						class: AppBundle\Admin\PostAdmin
+						tags:
+							- name: sonata.admin
+							  manager_type: orm
+							  group: "Content"   # ******** notice the group tag, stating that this particular Admin service belongs to the Content group ********.
+							  label: "Post"
+						arguments:
+							- ~
+							- AppBundle\Entity\Post
+							- ~
+						public: true
+			
+	5.4 Configuring what actions are available for each item on the dashboard
+		By default. A “list” and a “create” option are available for each item on the dashboard. 
+		If you created a custom action and want to display it along the other two on the dashboard, you can do so by overriding the getDashboardActions() method of your admin class:
+		
+		<?php
+			// src/AppBundle/Admin/PostAdmin.php
+
+			class PostAdmin extends AbstractAdmin
+			{
+				// ...
+
+				public function getDashboardActions()
+				{
+					$actions = parent::getDashboardActions();
+
+					$actions['import'] = array(
+						'label'              => 'Import',
+						'url'                => $this->generateUrl('import'),
+						'icon'               => 'import',
+						'translation_domain' => 'SonataAdminBundle', // optional
+						'template'           => 'SonataAdminBundle:CRUD:dashboard__action.html.twig', // optional
+					);
+					
+					 unset($actions['list']);  //   hide 'List' action from the dashboard admin class list.
+
+					return $actions;
+				}
+
+			}
+		?>
+	
+	   5.4.1  Unset Actions:
+	        e.g:  unset($actions['list']);
+	        If you do this, you need to be aware that the action is only hidden. it will still be available by directly calling its URL, unless you prevent that using proper security measures (e.g. ACL or role based).
+
+-------------------------- -------------------  --------------------------
 
 
