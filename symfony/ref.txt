@@ -1,0 +1,1 @@
+1. https://stackoverflow.com/questions/22997550/modal-window-for-edit-model-in-sonata-admin

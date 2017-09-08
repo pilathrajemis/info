@@ -1,0 +1,3 @@
+php -d memory_limit=-1 php7cc.php /path/to/my/directory
+
+php -d memory_limit=-1 php7cc.php D:\xampp\htdocs\tQuest_Dev\wwwroot

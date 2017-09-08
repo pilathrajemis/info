@@ -24,8 +24,12 @@ which copies (or symlinks) files into the correct location. (target is by defaul
 		$ php bin/console doctrine:schema:update
 
 
-
-
+6. Generate the  entity mapping file form the database.
+	php bin/console doctrine:mapping:import --force AppBundle xml/yml
+    
+	php bin/console doctrine:mapping:convert annotation ./src
+    
+	php app/console doctrine:generate:entities AppBundle:Category
 
 
 
@@ -48,6 +52,22 @@ FOS Cmd:
 ---------------
 create admin user:
  php app/console fos:user:create adminuser --super-admin
+ 
+ 
+ 
+Doctrine cmds:
+----------------------
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+
+php bin/console doctrine:generate:entity
+After creating your entities you should validate the mappings with the following command:
+php bin/console doctrine:schema:validate
+
+
+Generating Getters and Setters¶
+You Need to create public getter and setter methods (e.g. getName(), setName($name)) in order to access its properties in the rest of your application's code. 
+Add these methods manually or with your own IDE.
 
 
 

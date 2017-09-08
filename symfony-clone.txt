@@ -1,0 +1,7 @@
+--- Clone ---
+
+1. git clone https://github.com/pilathraj/symfony-gs.git
+2. php bin/console assets:install
+3. php bin/console doctrine:schema:create
+
+4.  php app/console fos:user:create adminuser --super-admin

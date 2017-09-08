@@ -75,5 +75,7 @@ Using the PHP Code Beautifier and Fixer
 
 $php phpcbf --standard=myStandard --report=diff D:\xampp\htdocs\test\cbad.php --suffix=.fixed
 
+$php phpcbf --standard=tQuest --report=diff D:\xampp\htdocs\test\geh_US_twin_scan.php --suffix=.fixed
+
 
 
