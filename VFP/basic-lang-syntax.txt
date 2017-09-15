@@ -1,0 +1,33 @@
+**  used for comment 
+&& used comment in the end of the line.
+note used for the comments 
+
+** This is my first VFP programe.
+
+clear && clear the desktop
+
+?"Hello Pilathraj"
+
+-------------------------------
+Run the programe 
+Do <Filename>
+
+
+================ ********* ==========
+** demostrate working with variables
+
+LOCAL myMsg
+
+mymsg  = "Hello,Pilathraj!!" && VFP case insencitive
+clear
+?mymsg  
+
+============== ************* ==========
+
+** conditions  in VFP
+
+IF( Date() = {^2017-09-15}) THEN 
+	?"Happy new year"
+ELSE
+   ?"Have a great day"
+ENDIF

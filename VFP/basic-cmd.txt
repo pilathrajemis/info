@@ -1,0 +1,236 @@
+?Hello Pilathraj
+?3*100
+
+_screen.backColor = rgb(255,255,0)
+
+set status bar off
+set status bar on
+
+# variables #
+
+name = "pilathraj" #C
+age = 27  #N
+address = "3 main st, ch" #C
+likescoffee = .F. # L
+
+# display all memory variables #
+
+display memory like *    # list all memory variable #
+ 
+display memory like age   # show age only #
+
+
+# clear memory variable close & re-open all memory varible are gone. else use realse cmd # 
+
+release all
+
+#get current default working directory  for VFP #
+
+?FullPath(curdir())
+
+# set default location for  store the database for VFP #
+
+set default to D:\VFP\lesson1
+
+# create table #
+create ?  # create new table using the popup window dialog.
+
+# use the table #
+
+use ?  # select the table.
+
+# show the rows in VFP desktop using list cmd.
+
+list
+
+# view the table using the  browse cmd,  table dialog will be open, you can apply CURD UI interface's#
+
+browse
+
+
+# replace values for all rows
+
+replace age with 32 all
+replace age with 35    # It will be replacing the data with cursor pointing row in the browse Window.
+
+modify structure   # modify table structure.
+
+change   # apply change  data in the table.
+
+
+## Visual FoxPro  Scopping ....
+-----------------------------
+| * ALL, Next, Record, Rest |
+-----------------------------
+
+# Display all name in the  table.
+
+Display fields Name ALL.
+
+# Display the current record point row in the table.
+
+Display fields Name form next two rows.
+
+display fields Name Next 2.
+
+
+# Record pointer move top.
+
+Go Top
+
+   # move specific record pointer
+   
+Go 3
+  or 
+  display fields Name Record 3.
+  or 
+ Skip 2
+ 
+ 
+
+
+# print all row form the current record pointer.
+
+display fields Name rest
+
+
+#Find a row based on the condition   === find one
+-------------------------------------
+
+Locate for likecoffe = .T.
+# Find all rows based on the condition  == find all
+-------------------------------
+display for likecoffee = .F.  or   list for likecoffee = .F.
+
+
+# Delete record.
+----------------
+
+delete record 4
+
+set deleted on  # hide the deleted row form the column.
+
+
+Pack  --  Used remove the data permentaly form the table.
+
+------------- Sort -------------
+sort to mytable2 on name   #it create a new table with physically re-arrange the rows.
+sort to mytable2 on name, city   #it create a new table with physically re-arrange the rows.
+
+
+--------------- Indexing -----------------
+
+ ** 3 type of indexing support by FoxPro **
+ 
+ * 1. Structural compound indexing
+ * 2. Non-Strctural compound indexing
+ * 3. Standalone Index
+ 
+ 
+ --- Create the compound index ----
+ 
+ index on name tag name_index
+ index on <column-name> tag <index-tag-name>.
+ 
+ ----- use index when open the table ------
+ 
+ set order to <index-tag-name> && <column-name>.
+ 
+ ********* turn off ***********
+ set order to  ## show same physical order.
+ 
+ 
+ ex: index with multiple column
+ -------------------------------
+ 
+ index on city+name tag cn_index
+ 
+ set order to cn_index && city+name
+ 
+ 
+ # search specific value, we used 
+ seek "index-key column value"
+ 
+ # you can use tge find for same.
+
+find "chennai"
+
+# apply filter with help of key in browse.
+
+browse key "c"
+
+----- **********  Stand alone index  ***********--
+
+index on city to city_index
+
+**** any change mode on table to we should run reindex  cmd **************
+reindex
+browse
+
+
+#Copy structure to new table.
+
+copy structure to mynewTable
+
+
+==================== Import/Export ============================
+use mynewTable
+append from mytable1   #copy data from the mytable1 to  mynewTable
+browse
+#append based on the condition
+
+append from mytable1 for city = "chennai"
+
+append from ? type CSV   --- header  skipped
+append from ? type XL8   --import excel file include the header.
+append form ? type delimited   -- import .txt file.
+append form ? type sdf   -- import .txt file.
+
+Export:
+  copy to name_of_file type xl5  # xl5 -- used for export. xl8 -used for import. 
+  copy to name_of_file type csv  
+  
+  copy to name_of_file type csv  
+  
+
+
+========================== ZAP ~~~ truncate =============================
+Zap    ----  Removes all records from the current table and leaves only the structure of the table.
+
+
+=========== work multiple  table / alias 
+
+use mytable in 0   #   0 --- used to dynamically allocate next work area.
+use mytable1 in 0
+
+# for dynamic alias to use  again 
+use mytable in 0  again    # It create dynamic alias from A-J then W11 - W 32767. VFP allow to create 32767 work area at time.
+
+# static alias 
+use mytable in 0  again  alias myaliastbl
+
+***************   feedback@learnvisualfoxpro.com                 ***********************
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
