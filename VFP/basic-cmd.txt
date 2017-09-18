@@ -1,6 +1,10 @@
 ?Hello Pilathraj
 ?3*100
 
+??"Testing"   && print on same line
+
+???"Print this line in the printer"
+
 _screen.backColor = rgb(255,255,0)
 
 set status bar off
@@ -68,8 +72,10 @@ change   # apply change  data in the table.
 Display fields Name ALL.
 
 # Display the current record point row in the table.
+Display fields Name
 
-Display fields Name form next two rows.
+
+#Display fields Name form next two rows.
 
 display fields Name Next 2.
 
@@ -153,7 +159,7 @@ sort to mytable2 on name, city   #it create a new table with physically re-arran
  
  # you can use tge find for same.
 
-find "chennai"
+find chennai
 
 # apply filter with help of key in browse.
 
@@ -204,10 +210,10 @@ use mytable in 0   #   0 --- used to dynamically allocate next work area.
 use mytable1 in 0
 
 # for dynamic alias to use  again 
-use mytable in 0  again    # It create dynamic alias from A-J then W11 - W 32767. VFP allow to create 32767 work area at time.
+use mytable in 0  again    # It create dynamic alias from A-J then W11 - W32767. VFP allow to create 32767 work area at time.
 
 # static alias 
-use mytable in 0  again  alias myaliastbl
+use mytable in 0  again alias myaliastbl
 
 ***************   feedback@learnvisualfoxpro.com                 ***********************
 

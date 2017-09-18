@@ -26,8 +26,85 @@ clear
 
 ** conditions  in VFP
 
-IF( Date() = {^2017-09-15}) THEN 
+IF(Date() = {^2017-09-15}) THEN 
 	?"Happy new year"
 ELSE
-   ?"Have a great day"
+  ?"Have a great day"
 ENDIF
+
+
+** Case Statements 
+
+DO CASE
+	CASE DATE() = DATE(2017,1,1)
+		?"Happy new Year"
+	CASE CDOW(DATE()) = "Monday"
+	    ?"Week begin"
+	CASE CDOW(DATE()) = "Friday"
+	    ?"Week End"
+	OTHERWISE
+	     ?"Today is not a Monday or Firday"
+ENDCASE
+==============********** Loops  FOR/NEXT (ENDFOR) /  FOR EACH/NEXT  DO WHILE  SCAN/ENDSCAN *********** ============
+
+
+**   For loop
+clear
+for j = 1 to 5 step 3
+  ?"step :"+ transform(j)  && str(j) transform    transform(j) === alltrim(str(j)) 
+endfor  && next
+?"loop end"
+
+
+** Do While
+clear
+j = 1
+Do while j <=10
+ ?"step : " + alltrim(str(j))
+ j = j + 1 && j increment of 1.
+ENDDO
+?"Loop End"
+
+--------------
+** do while
+
+** This program using the table & print records
+
+clear 
+
+use mytable1
+Go Top   && move cursor on top
+
+do while NOT EOF()
+  if likecoffee = .T.
+  	?trim(Name)+' '+"like coffee!!"
+  else
+    ?trim(Name)+' '+" doesn't like coffee!!"
+  endif 
+  skip  && move next row
+enddo
+?"Record end!!"
+-----------------------
+
+** This program using the table & print records with scan
+
+clear 
+
+use mytable1
+** Go Top   && move cursor on top   --- no need for scan
+
+*** do while NOT EOF()
+scan
+  if likecoffee = .T.
+  	?trim(Name)+' '+"like coffee."
+  else
+    ?trim(Name)+' '+" doesn't like coffee."
+  endif 
+  ** skip  && move next row   --- No  need for scan
+endscan
+?"Record end!!"
+-------------
+
+
+
+   
