@@ -1,0 +1,59 @@
+**  Let us see some built in function in VFP 
+
+1. STR   == convert numeric to string
+
+  ?STR(3.1454)   && 3
+  ?STR(3.1454,10,6)   && 3.1454    --   Str(n, numeric_length, decimal_length)
+ 
+2. val  == convert character to numeric
+3. int()  === retrun integer
+
+4. Left(string, length)
+     left("welcome to VFP",7)  &&  welcome
+     right("welcome to VFP", 3) && VFP
+     substr("welcome to VFP", 9, 2) && to
+     
+5. Get lenght of the string
+     len(mystring)
+     
+6. GEt Asccii value
+       ASC("A")  && 65
+       
+7. Chr  int to Char
+     chr(65)  && A
+
+8. padl  & padr   && adding padding left or right of the string.
+  ?padl("hello", 7, " ");   && string, length of string, padded characters
+  ?padr("hello", 7, " ");
+  ?padc("hello", 7, " ");  && pad center.   " hello "
+  
+9. replicate  -- used to repeat the character
+
+   ?replicate("=", 100)
+   
+10. ALLTRIM , LTRIM, RTRIM   -- used to trim 
+
+11. Strtran used to replace every occurence. 
+
+     cMsg = "Hello world!"
+     strtran(cMsg, "World" , "Universe") && Hello Universe!   &&  match with case sensitive
+     
+12. Transform()  === ALLTRIM(STR(somestring))
+
+     Transform(someStr, FormateStr) 
+     ex.
+     
+     ?Transform(1234567890, "@R 999-999-9999")  && 123-456-7890   if length of pattern is not match then show up ***_***_****
+      ** @R   -- add mask characters  here  -
+      
+      
+      Release Note: George Eliot LIMS interface additional text input tokens
+      
+      
+      Added additional text input tokens into LIMS.
+      
+    Added additional text input tokens into LIMS LIMS interface.
+      
+    We inclueded following "Clinical Details", "History", "Current Medication", "Ordered Items Comments", "Additional Contact Information"
+     & "Urgency (Amplificiation)" text input tokens into LIMS LIMS interface.
+

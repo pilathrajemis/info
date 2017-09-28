@@ -1,0 +1,41 @@
+**   Set cmd used to change the value of VFP  > Tools > options. 
+
+
+Set century On  && show 4 digits year   
+Date()   && 09/25/2017
+
+** change the date format 
+set date MDY   && 09/22/2017
+set Date YMD   && 2017/09/22
+
+*** ON/OFF status bar  **
+ 
+set status bar on   && count cmd return no.of records in the  status bar when cmd talk on
+set status bar off   && count cmd return no.of records in the  VFP desktop when cmd talk on
+
+** ON/OFF talk  **
+set talk on
+
+*** display status  cmd  used to know more about our VFP environment settings***
+display status
+
+
+*** Set clock on    cmd used to show clock on VFP's desktop***  
+  Set clock on  
+  Set clock to 25,60  && move the clock on specific axis.
+  Set clock status   && set clock on status ba  
+  set hour to 24  && change the clock to 24 hours clock
+
+** set sysmenu to  cmd used to remove/reset VFP  menu.
+set sysmenu to
+set sysmenu to default  && reset to default menu.
+
+
+
+*** hide the deleted records from  db ***
+
+set deleted on
+set carry on && carry all current row when create a new record, Ctrl + Y. So we'll easy modify data.
+
+
+
