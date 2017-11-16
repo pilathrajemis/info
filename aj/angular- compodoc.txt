@@ -1,0 +1,17 @@
+Documentation tool for your Angular application.
+    Installation:-
+       npm install -g @compodoc/compodoc
+       or  
+       npm install -g "@compodoc/compodoc"
+       
+       
+  Define a script task for it in your package.json :
+
+  "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"angular-reddit documentation\"",
+  "doc-serve": "compodoc -s -r 4201" 
+  
+  Run the build: 
+  npm run doc
+  
+  Serve documentation:
+  npm run doc-serve

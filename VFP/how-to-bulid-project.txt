@@ -1,0 +1,7 @@
+** main program we need to done following things. Main.prg
+
+1. Setup the application environment
+2. Setup any menus
+3. Call login form (if any)
+4. Start the READ EVENT
+5.  Clean up 
