@@ -1,0 +1,85 @@
+1. Difference between Constructor and ngOnInit:
+    The Constructor is a default method of the class that is executed when the class is instantiated. ( call first)
+    ngOnInit is a life cycle hook called by Angular2 to indicate that Angular is done creating the component. ( call after creating component)
+
+
+2. @Input() article: Article;  => input table should added in import    import { Component, HostBinding, OnInit, Input } from '@angular/core';
+3. How to added hostBinding css class:
+    @HostBinding('attr.class') cssClass = 'row';   Includes HostBinding header import;
+    
+4. FormControl: have 3 state, such as  valid, dirty(change input)  and errors.
+      <input type="text" [formControl]="name" />
+      or
+      let nameControl = new FormControl("Nate");
+      let name = nameControl.value; // -> Nate
+     // now we can query this control for certain values:
+      nameControl.errors // -> StringMap<string, any> of errors
+      nameControl.dirty // -> false
+      nameControl.valid // -> true
+      
+5. FormGroups: providing a wrapper interface around a collection of FormControls.  have 3 state, such as  valid, dirty(change input)  and errors.
+ State values depends on childeren FormControl.
+ 
+      let personInfo = new FormGroup({
+          firstName: new FormControl("Nate"),
+          lastName: new FormControl("Murray"),
+          zip: new FormControl("90210")
+        });
+        
+6. There are two ways of using forms in Angular such as FormsModule and ReactiveFormsModule. It should be included app module file like
+  
+  import {
+    FormsModule,
+    ReactiveFormsModule
+  } from '@angular/forms';
+
+and in @Ngmodules's imports like
+   imports: [
+    .....,
+    FormsModule,
+    ReactiveFormsModule    
+  ]
+  
+7. FormBuilder: used to easily customized. 
+  import { FormBuilder, FormGroup } from '@angular/forms'; in your component.
+  
+  then used it in DI
+     constructor(fb: FormBuilder) {
+      this.myForm = fb.group({'sku': ['ABC123']});
+      }
+      
+      There are two main functions we'll use on FormBuilder:
+     1. control - creates a new FormControl
+     2. group - creates a new FormGroup
+     
+8. 
+    To create a new FormGroup and FormControls implicitly use:
+      • ngForm and
+      • ngModel
+    But to bind to an existing FormGroup and FormControls use:
+      • formGroup and
+      • formControl
+      
+9. Validators:
+        Validators are provided by the Validators module.
+        To use validators we need to do two things:
+          1. Assign a validator to the FormControl object
+          2. Check the status of the validator in the view and take action accordingly
+          
+          let control = new FormControl('sku', Validators.required);
+          
+          -or-
+          
+          constructor(fb: FormBuilder) {
+            this.myForm = fb.group({
+              'sku': ['', Validators.required]
+            });
+            this.sku = this.myForm.controls['sku'];
+          }
+ 
+10. EventEmitter is an Observable, which means it conforms to a defined specification for watching for changes.
+     To watch for changes on a control we:
+      1. get access to the EventEmitter by calling control.valueChanges. Then we
+      2. add an observer using the .subscribe method
+
+  

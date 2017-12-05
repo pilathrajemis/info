@@ -1,0 +1,43 @@
+Angular Aninmations:
+--------------------
+Elemement       -  Room           HTML element
+States          -  Off / On       Off / On
+Off State       -  Darkness       backgroundColor: black
+On State        -  Light          backgroundColor: white
+Trigger         -  Switch         Button
+
+
+import {
+    trigger,
+    state,
+    style,
+    transition,
+    animate,
+    keyframes,
+    group
+} from '@angular/animations';
+
+*** Each animation possible to have trigger with name, state & style, transition.
+
+animations: [
+  trigger('heroState', [
+    state('inactive', style({
+      backgroundColor: '#eee',
+      transform: 'scale(1)'
+    })),
+    state('active',   style({
+      backgroundColor: '#cfd8dc',
+      transform: 'scale(1.1)'
+    })),
+    transition('inactive => active', animate('100ms ease-in')),
+    transition('active => inactive', animate('100ms ease-out'))
+  ])
+]
+
+void => *   ===>  :enter
+*=>void ==> :leave
+
+
+-------
+group is used to apply multiple animations in the transition.
+keyframe is used to apply multiple styles in the transition's animate.

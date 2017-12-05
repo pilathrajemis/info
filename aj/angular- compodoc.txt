@@ -15,3 +15,9 @@ Documentation tool for your Angular application.
   
   Serve documentation:
   npm run doc-serve
+  
+  
+  https://compodoc.github.io/website/guides/usage.html
+  
+  compodoc <src> [options] 
+  
