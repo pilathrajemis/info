@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Hello Pilathraj - welcome to Vue Js</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  </head> 
+  <body>
+    <div id="app">
+       <ol>
+        <todo-list v-bind:todos="items"></todo-list>
+       </ol>
+    </div>     
+  </body>
+  <script>
+     /* component should be create first before the Vue app create */
+     Vue.component('todo-list',
+      { 
+        props: ['todos'],    
+        template: '<ol><li v-for="item in todos">{{ item }}</li></ol>'
+      }
+    );
+    
+    var app = new Vue(
+      {
+        el: "#app",
+        data: {
+            'items': ["Apple", "Boy", "Car", "Dog"]
+        }
+      }
+    );
+   
+  </script>
+  
+</html>

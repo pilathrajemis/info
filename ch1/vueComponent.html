@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Hello Pilathraj - welcome to Vue Js</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  </head> 
+  <body>
+    <div id="app">
+       <todo></todo>
+    </div>     
+  </body>
+  <script>
+     /* component should be create first before the Vue app create */
+     Vue.component('todo',
+      {
+        'template': '<p>Hello pilathraj, you created a Vue component</p>'
+      }
+    );
+    
+    var app = new Vue(
+      {
+        'el': "#app"
+      }
+    );
+   
+  </script>
+  
+</html>
