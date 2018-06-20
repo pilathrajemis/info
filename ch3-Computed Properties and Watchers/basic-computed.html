@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Hello Pilathraj - welcome to Vue Js</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>Message: {{ message }}</p>
+      <p>compute-reverseMessage: {{ reversedMessage }}</p>
+      <p>reverseMessage-Method: {{ reversedMessageFun() }}</p>
+    </div>    
+  </body>
+  <script>
+    var app = new Vue(
+      {
+        el: "#app",
+        data:{
+          'message': "Hello",
+        },
+        computed:{ 
+          /* used  caching return the same result until the dependecy change */ 
+          reversedMessage: function(){
+           return this.message.split('').reverse().join('');
+          }
+        },
+        methods: {
+          reversedMessageFun: function(){
+           return this.message.split('').reverse().join('');
+          }
+        }
+        
+      }
+    );   
+  </script>
+</html>

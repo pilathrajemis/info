@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Hello Pilathraj - Vuj compute-vs-methods-difference</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>Date: {{ Date }}</p>
+      <p>Date: -from compute prop: {{ DateNow }}</p>
+      <p>Date: -from method: {{ DateNowFun() }}</p>
+    </div>    
+  </body>
+  <script>
+    var app = new Vue(
+      {
+        el: "#app",
+        data:{
+          'Date': new Date().toLocaleString(),
+        },
+        computed:{ 
+          /* used  caching return the same result until the dependecy change */ 
+          DateNow: function(){
+           return  new Date().toLocaleString(); 
+          }
+        },
+        methods: {
+          DateNowFun: function(){
+           return  new Date().toLocaleString(); 
+          }
+        }
+        
+      }
+    );   
+  </script>
+</html>

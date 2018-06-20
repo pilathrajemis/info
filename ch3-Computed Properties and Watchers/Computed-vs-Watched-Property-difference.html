@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Hello Pilathraj - Vuj compute-vs-methods-difference</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>FistName: {{ FistName }}</p>
+      <p>LastName: {{ LastName }}</p>
+      <p>FullName: {{ FullName }}</p>
+      <p>FullName Compute: {{ FullNameCompute }}</p>
+    </div>    
+  </body>
+  <script>
+    var app = new Vue(
+      {
+        el: "#app",
+        data:{
+          'FistName': 'Pilath',
+          'LastName': 'Raj',
+          'FullName': 'Pilath Raj'          
+        },
+        computed:{ 
+          /* used  caching return the same result until the dependecy change */ 
+          FullNameCompute: function(){
+           return  this.FistName+' '+this.LastName;
+          }
+        },
+        watch: {
+          FistName: function(val){
+           return this.FullName = val +' '+this.LastName;
+          },
+          LastName: function(val){
+           return this.FullName = this.FistName +' '+val;
+          }         
+        }
+        
+      }
+    );   
+  </script>
+</html>
