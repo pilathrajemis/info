@@ -1,4 +1,4 @@
-# hello
+# eshop with vuejs and bulma
 
 ## Project setup
 ```
