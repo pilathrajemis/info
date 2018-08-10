@@ -37,7 +37,7 @@ const mutations = {
         state.all.push(product)
     },
     [UPDATE_PRODUCT] (state, product) {
-        const index = state.all.findIndex((p) => p.id === product.id)
+        const index = state.all.findIndex((p) => p.sku === product.sku)
     
         if (index !== -1) {
           // We need to replace the array entirely so that vue can recognize
