@@ -41,17 +41,20 @@ export default {
       'deleteProduct'
     ]),
       onFormSave: function(product) {                       
-            this.saveProduct(product)     
-            this.resetProductInForm ()
+        this.saveProduct(product).then(() => this.resetProductInForm ())            
       },
       onEditClicked: function(product) {
           this.ProductInForm = {...product }
       },
       onRemoveClicked: function(productSku) {
-          this.deleteProduct(productSku)        
-          if (productSku === this.ProductInForm.sku) {
-             this.resetProductInForm ()
-         }
+          this.deleteProduct(productSku).then(
+              () => {
+                 if (productSku === this.ProductInForm.sku) {
+                    this.resetProductInForm ()
+                 }
+              }
+          )      
+          
       },
       resetProductInForm: function() {
          this.ProductInForm = initialData().ProductInForm

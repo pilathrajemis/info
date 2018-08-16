@@ -19,3 +19,14 @@ npm run build
 ```
 npm run lint
 ```
+
+#### Note:
+```
+1. install npm install -g @vue/cli
+2. install npm install -g bulma
+3. vue add vue-router
+4. vue add vuex
+5. npm install vue-resource
+
+````
+

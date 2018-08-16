@@ -4,35 +4,22 @@ import * as getters from './getters'
 import {
     CREATE_PRODUCT,
     UPDATE_PRODUCT,
-    DELETE_PRODUCT
+    DELETE_PRODUCT,
+    FETCH_PRODUCTS
   } from './mutation-types'
 
 // initial state
 const initialState = {
-    all: [
-        {
-            name: "Product 1",
-            sku: "product-1",
-            description: "prodcut 1 description added here",
-            price: 123
-        },
-        {
-            name: "Product 2",
-            sku: "product-2",
-            description: "prodcut 2 description added here",
-            price: 13.99
-        },
-        {
-            name: "Product 3",
-            sku: "product-3",
-            description: "prodcut 3 description added here",
-            price: 34.00
-        }
-    ]
+    all: [ ]
 }
 
 // mutations
 const mutations = {
+
+     [FETCH_PRODUCTS](state,products){         
+        state.all = products
+     },
+
     [CREATE_PRODUCT](state, product){
         state.all.push(product)
     },

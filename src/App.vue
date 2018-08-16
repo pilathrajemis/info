@@ -20,3 +20,12 @@
   margin-top: 60px;
 }
 </style>
+<script>
+export default { 
+  created: function(){
+    this.$store.dispatch('fetchProducts')
+  }
+
+}
+</script>
+
