@@ -1,6 +1,6 @@
 ## CSS-Grid
   1. CSS-Grid is a two-dimentional system.(row x column).
-	2. Flexbox  is a simpler and one-dimentional.
+  2. Flexbox  is a simpler and one-dimentional.
 	
 **Css layout**
 	we used
