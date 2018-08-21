@@ -3,10 +3,10 @@
   2. Flexbox  is a simpler and one-dimentional.
 	
 **Css layout**
-we used
-	1. table
-	2. floats
-	3. positioning and inline-block
+we used 
+	-	table	
+	- 	floats
+	- 	positioning and inline-block
 
 **Solution.**
 		a. Flexbox  (but it's one-dimentional.)
