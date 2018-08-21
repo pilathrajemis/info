@@ -4,13 +4,13 @@
 	
 **Css layout**
 we used 
-	-	table	
-	- 	floats
-	- 	positioning and inline-block
+1. table	
+2. floats
+3. positioning and inline-block
 
 **Solution.**
-		a. Flexbox  (but it's one-dimentional.)
-		b. CSS-Grid (two-dimentional)
+a. Flexbox  (but it's one-dimentional.)
+b. CSS-Grid (two-dimentional)
 	
 > Best solution:
 		 Flexbox and Grid actually work very well together.
