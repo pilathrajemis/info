@@ -2,18 +2,18 @@
   1. CSS-Grid is a two-dimentional system.(row x column).
 	2. Flexbox  is a simpler and one-dimentional.
 	
-	** Css layout **
-	     we used
-			     1. table
-					 2. floats
-					 3. positioning and inline-block
-					 
-					 Solution.
-					    a. Flexbox  (but it's one-dimentional.)
-							b. CSS-Grid (two-dimentional)
-						
-						Best solution:
-						   Flexbox and Grid actually work very well together.
+** Css layout **
+	we used
+		 1. table
+		 2. floats
+		 3. positioning and inline-block
+		 
+** Solution.**
+		a. Flexbox  (but it's one-dimentional.)
+		b. CSS-Grid (two-dimentional)
+	
+> Best solution:
+		 Flexbox and Grid actually work very well together.
 							 
 	To get Start:
 	------------
@@ -64,8 +64,8 @@
 		-------------
 		The total space surrounded by four grid lines.
 		   - A grid area may be comprised of any number of grid cells.
+
 			 
-	  
 ### Properties for the Grid Container
 	- display
 	- grid-template-columns
