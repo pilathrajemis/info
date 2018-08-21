@@ -23,6 +23,7 @@ we used
 ### Terminology:		
 **1. Grid Container:**
 Direct parent of all the grid items.
+
 ex. In this example container is the grid container.
  ```
 		<div class="container">
@@ -32,16 +33,17 @@ ex. In this example container is the grid container.
 		</div>
 ```
 **2. Grid Item:**
-  The children (e.g. direct descendants) of the grid container.
-  ex. Here the item elements are grid items, but sub-item isn't.
-  ```			
-				<div class="container">
-					<div class="item"></div> 
-					<div class="item">
-						<p class="sub-item"></p>
-					</div>
-					<div class="item"></div>
+The children (e.g. direct descendants) of the grid container.
+
+ex. Here the item elements are grid items, but sub-item isn't.
+```			
+			<div class="container">
+				<div class="item"></div> 
+				<div class="item">
+					<p class="sub-item"></p>
 				</div>
+				<div class="item"></div>
+			</div>
 ```
 **3. Grid Line:**
 The dividing lines that make up the structure of the grid.
@@ -88,6 +90,4 @@ The total space surrounded by four grid lines.
 - grid-area
 - justify-self
 - align-self
-- place-self
-
-      	 
+- place-self    	 
