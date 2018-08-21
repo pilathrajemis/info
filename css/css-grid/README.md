@@ -2,7 +2,7 @@
   1. CSS-Grid is a two-dimentional system.(row x column).
 	2. Flexbox  is a simpler and one-dimentional.
 	
-	Css layout
+	** Css layout **
 	     we used
 			     1. table
 					 2. floats
@@ -66,36 +66,36 @@
 		   - A grid area may be comprised of any number of grid cells.
 			 
 	  
-		### Properties for the Grid Container
-			- display
-			- grid-template-columns
-			- grid-template-rows
-			- grid-template-areas
-			- grid-template
-			- grid-column-gap
-			- grid-row-gap
-			- grid-gap
-			- justify-items
-			- align-items
-			- place-items
-			- justify-content
-			- align-content
-			- place-content
-			- grid-auto-columns
-			- grid-auto-rows
-			- grid-auto-flow
-			- grid
-			
-	### Properties for the Grid Items
-		- grid-column-start
-		- grid-column-end
-		- grid-row-start
-		- grid-row-end
-		- grid-column
-		- grid-row
-		- grid-area
-		- justify-self
-		- align-self
-		- place-self
-		
+### Properties for the Grid Container
+	- display
+	- grid-template-columns
+	- grid-template-rows
+	- grid-template-areas
+	- grid-template
+	- grid-column-gap
+	- grid-row-gap
+	- grid-gap
+	- justify-items
+	- align-items
+	- place-items
+	- justify-content
+	- align-content
+	- place-content
+	- grid-auto-columns
+	- grid-auto-rows
+	- grid-auto-flow
+	- grid
+	
+### Properties for the Grid Items
+- grid-column-start
+- grid-column-end
+- grid-row-start
+- grid-row-end
+- grid-column
+- grid-row
+- grid-area
+- justify-self
+- align-self
+- place-self
+
       	 
