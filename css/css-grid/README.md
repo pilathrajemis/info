@@ -6,7 +6,7 @@
 	we used
 		1. table
 		2. floats
-	  3. positioning and inline-block
+	        3. positioning and inline-block
 
 **Solution.**
 		a. Flexbox  (but it's one-dimentional.)
@@ -44,7 +44,7 @@
 					</div>
 					<div class="item"></div>
 				</div>
-	  c. Grid Line:
+	        c. Grid Line:
 		------------
 		The dividing lines that make up the structure of the grid.
 		  - vertical line (column grid line)
