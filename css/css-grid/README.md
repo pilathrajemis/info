@@ -46,12 +46,12 @@ ex. In this example container is the grid container.
 **3. Grid Line:**
 The dividing lines that make up the structure of the grid.
 - vertical line (column grid line)
-- horizontal line ( row grid line)		
+- horizontal line ( row grid line)
 **4. Grid Track:**
 The space between two adjacent grid lines. (You can think of them like the columns or rows of the grid).
 **5. Grid Cell: (Single Unit)**
 The space between two adjacent row and two adjacent column grid lines.		
-**f. Grid Area:**		
+**f. Grid Area:**	
 The total space surrounded by four grid lines.
     - A grid area may be comprised of any number of grid cells.
 
