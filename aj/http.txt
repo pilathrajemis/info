@@ -1,0 +1,82 @@
+1. Http Interceptors
+------------
+    Until now, there was no way to intercept and modify HTTP requests globally. This has always been possible in AngularJS and the fact that it has been lacking in Angular 2+ has been a sticking point with developers.
+    
+    a. So why are HTTP interceptors useful?
+         There are many reasons, but one common use case is to automatically attach authentication information to requests.
+    
+    
+    Let’s take a look at how to use Angular’s HttpInterceptor interface to make authenticated HTTP requests.
+    --------------------------------------------------------------------------------------------------------
+    npm i --save angular2-jwt
+    1. After installing angular2-jwt, use it in a service.
+      // src/app/auth/auth.service.ts
+      import { Injectable } from '@angular/core';
+      import decode from 'jwt-decode';
+      @Injectable()
+      export class AuthService {
+        public getToken(): string {
+          return localStorage.getItem('token');
+        }
+        public isAuthenticated(): boolean {
+          // get the token
+          const token = this.getToken();
+          // return a boolean reflecting 
+          // whether or not the token is expired
+          return tokenNotExpired(null, token);
+        }
+      }
+      
+      
+     2. Create an Interceptor
+      ---------------------
+      The goal is to include the JWT which is in local storage as the Authorization header in any HTTP request that is sent. The first step is to create an interceptor. To do this, create an Injectable class which implements HttpInterceptor.
+      // src/app/auth/token.interceptor.ts
+      import { Injectable } from '@angular/core';
+      import {
+        HttpRequest,
+        HttpHandler,
+        HttpEvent,
+        HttpInterceptor
+      } from '@angular/common/http';
+      import { AuthService } from './auth/auth.service';
+      import { Observable } from 'rxjs/Observable';
+      @Injectable()
+      export class TokenInterceptor implements HttpInterceptor {
+        constructor(public auth: AuthService) {}
+        intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+          
+          request = request.clone({
+            setHeaders: {
+              Authorization: `Bearer ${this.auth.getToken()}`
+            }
+          });
+          return next.handle(request);
+        }
+      }
+      
+   3. Add the Interceptor to Providers
+    ---------------------------------
+      The interceptor needs to be added to the HTTP_INTERCEPTORS array. This is done by making the existing HTTP_INTERCEPTORS array use the new class we’ve created. Add this in the providersarray for our application’s module.
+      // src/app/app.module.ts
+      import { HTTP_INTERCEPTORS } from '@angular/common/http';
+      import { TokenInterceptor } from './../auth/token.interceptor';
+      @NgModule({
+        bootstrap: [AppComponent],
+        imports: [...],
+        providers: [
+          {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+          }
+        ]
+      })
+      export class AppModule {}
+      
+  ----------
+  Now when we make any HTTP request, the user’s token will be attached automatically.
+
+=====================================================================================
+
+2. What is difference b/w HttpBackend & HttpClient:          

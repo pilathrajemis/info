@@ -81,5 +81,11 @@ and in @Ngmodules's imports like
      To watch for changes on a control we:
       1. get access to the EventEmitter by calling control.valueChanges. Then we
       2. add an observer using the .subscribe method
+ 
+ 11. what is Decorators?
+       Decorators are functions that modify JavaScript classes. 
+       Angular has many decorators that attach metadata to classes so that it knows what those classes mean and how they should work
+ 
+ 12. ng view classes: Angular has three kinds of view classes: components, directives, and pipes.
 
   

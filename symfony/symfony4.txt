@@ -1,0 +1,29 @@
+1. Create a application in sm4:
+  D:>xampp/htdocs/ composer create-project symfony/skeleton my-project
+  
+2. run application:  --- Run the build server we need to add symfony-web-server bundle.
+ cd my-project
+ composer require server --dev
+ php bin/console server:run 0.0.0.0:8001
+ 
+3. How to use annoations in the route.
+    
+    composer require annotations
+    
+    add  in your controller:
+      use Symfony\Component\Routing\Annotation\Route;
+     
+    add in your method    
+   /**
+    * @Route("/lucky/number2")
+    */
+
+4. List all comments
+     php bin/console list
+     
+     ex. show all routes
+       php bin/console debug:router
+
+5. install the Web Debug Toolbar: Debugging Dream
+      composer require --dev profiler
+     

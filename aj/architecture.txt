@@ -1,0 +1,63 @@
+Architecture:
+-------------
+    Angular is a framework for building client applications in HTML and either JavaScript or a language like TypeScript that compiles to JavaScript.
+    
+  1. Modules:-
+  -------
+    - Angular apps are modular and Angular has its own modularity system called NgModules.
+    - Every Angular app has at least one NgModule class, the root module, conventionally named AppModule.
+    - An NgModule, whether a root or feature, is a class with an @NgModule decorator.
+    
+  NgModule is a decorator function that takes a single metadata object whose properties describe the module. The most important properties are:
+
+      declarations - the view classes that belong to this module. Angular has three kinds of view classes: components, directives, and pipes.
+      exports - the subset of declarations that should be visible and usable in the component templates of other modules.
+      imports - other modules whose exported classes are needed by component templates declared in this module.
+      providers - creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app.
+      bootstrap - the main application view, called the root component, that hosts all other app views. Only the root module should set this bootstrap property.
+      
+  2. Templates: 
+       A template is a form of HTML that tells Angular how to render the component.
+  3. Metadata:
+        Metadata tells Angular how to process a class.
+  
+  4. Component decorator:
+     Here is the @Component decorator, which identifies the class immediately below it as a component class.
+     Here are a few of the most useful @Component configuration options:
+
+      selector: CSS selector that tells Angular to create and insert an instance of this component where it finds a <hero-list> tag in parent HTML. For example, if an app's HTML contains <hero-list></hero-list>, then Angular inserts an instance of the HeroListComponent view between those tags.
+      templateUrl: module-relative address of this component's HTML template, shown above.
+      providers: array of dependency injection providers for services that the component requires. This is one way to tell Angular that the component's constructor requires a HeroService so it can get the list of heroes to display.
+
+  5. Data binding:  
+  
+  DOM                                  COMPONENT
+  
+    <--------- {{ value }}  ------------------
+  
+    <---------[property]="value"------------
+    
+    ---------(event)="handler"------------------>
+    
+    <---------[(ng-model)]="property"----------> two way binding 
+    
+  6. Directives:
+  
+     Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives.
+     A directive is a class with a @Directive decorator. A component is a directive-with-a-template; a @Component decorator is actually a @Directive decorator extended with template-oriented features.
+  
+  7. Services:
+      Service is a broad category encompassing any value, function, or feature that your application needs.
+      Almost anything can be a service. A service is typically a class with a narrow, well-defined purpose. It should do something specific and do it well. 
+
+      Examples include:
+
+      logging service
+      data service
+      message bus
+      tax calculator
+      application configuration
+      
+  8. Dependency injection:
+      Dependency injection is a way to supply a new instance of a class with the fully-formed dependencies it requires. Most dependencies are services. Angular uses dependency injection to provide new components with the services they need.
+

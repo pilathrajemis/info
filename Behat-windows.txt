@@ -1,0 +1,3 @@
+installation -- composer require behat/behat
+
+init application : php vendor\behat\behat\bin\behat --init
