@@ -9,11 +9,11 @@ we used
 3. positioning and inline-block
 
 **Solution.**
-a. Flexbox  (but it's one-dimentional.)
-b. CSS-Grid (two-dimentional)
+1. Flexbox  (but it's one-dimentional.)
+2. CSS-Grid (two-dimentional)
 	
 > Best solution:
-		 Flexbox and Grid actually work very well together.
+   Flexbox and Grid actually work very well together.
 
 ### To get Start:
 	step 1. Container should have display:grid
