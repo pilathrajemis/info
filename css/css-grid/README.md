@@ -61,8 +61,11 @@ The total space surrounded by four grid lines.
     - A grid area may be comprised of any number of grid cells.
 
 ### Properties for the Grid Container
-- display
-- grid-template-columns
+- display:  grid | inline-grid;
+- grid-template-columns: <track-size> ... | <line-name> <track-size> ...;
+  - Values:
+    - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
+    - \<line-name\> \- an arbitrary name of your choosing
 - grid-template-rows
 - grid-template-areas
 - grid-template
