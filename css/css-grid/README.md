@@ -62,7 +62,7 @@ The total space surrounded by four grid lines.
 
 ### Properties for the Grid Container
 - display:  grid | inline-grid;
-- grid-template-columns: <track-size> ... | <line-name> <track-size> ...;
+- grid-template-columns: \<track-size\> ... | \<line-name\> \<track-size\> ...;
   - Values:
     - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
     - \<line-name\> \- an arbitrary name of your choosing
