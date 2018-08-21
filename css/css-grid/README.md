@@ -21,22 +21,20 @@ we used
 	step 3. In place its child elements into the grid with grid-column and grid-row
 
 ### Terminology:		
-	  a. Grid Container:
-		-----------------
-		Direct parent of all the grid items.
-		 ex. In this example container is the grid container.
-		 
-				<div class="container">
-					<div class="item item-1"></div>
-					<div class="item item-2"></div>
-					<div class="item item-3"></div>
-				</div>
-	  
-		b. Grid Item:
-		-------------
-		The children (e.g. direct descendants) of the grid container.
-		  ex. Here the item elements are grid items, but sub-item isn't.
-			
+**1. Grid Container:**
+	Direct parent of all the grid items.
+	ex. In this example container is the grid container.
+	 ```
+			<div class="container">
+				<div class="item item-1"></div>
+				<div class="item item-2"></div>
+				<div class="item item-3"></div>
+			</div>
+	```
+**2. Grid Item:**
+  The children (e.g. direct descendants) of the grid container.
+  ex. Here the item elements are grid items, but sub-item isn't.
+  ```			
 				<div class="container">
 					<div class="item"></div> 
 					<div class="item">
@@ -44,6 +42,8 @@ we used
 					</div>
 					<div class="item"></div>
 				</div>
+```
+				
 	        c. Grid Line:
 		------------
 		The dividing lines that make up the structure of the grid.
@@ -64,24 +64,24 @@ we used
 		   - A grid area may be comprised of any number of grid cells.
 
 ### Properties for the Grid Container
-	- display
-	- grid-template-columns
-	- grid-template-rows
-	- grid-template-areas
-	- grid-template
-	- grid-column-gap
-	- grid-row-gap
-	- grid-gap
-	- justify-items
-	- align-items
-	- place-items
-	- justify-content
-	- align-content
-	- place-content
-	- grid-auto-columns
-	- grid-auto-rows
-	- grid-auto-flow
-	- grid
+- display
+- grid-template-columns
+- grid-template-rows
+- grid-template-areas
+- grid-template
+- grid-column-gap
+- grid-row-gap
+- grid-gap
+- justify-items
+- align-items
+- place-items
+- justify-content
+- align-content
+- place-content
+- grid-auto-columns
+- grid-auto-rows
+- grid-auto-flow
+- grid
 	
 ### Properties for the Grid Items
 - grid-column-start
