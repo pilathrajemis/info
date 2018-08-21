@@ -22,15 +22,15 @@ we used
 
 ### Terminology:		
 **1. Grid Container:**
-	Direct parent of all the grid items.
-	ex. In this example container is the grid container.
-	 ```
-			<div class="container">
-				<div class="item item-1"></div>
-				<div class="item item-2"></div>
-				<div class="item item-3"></div>
-			</div>
-	```
+Direct parent of all the grid items.
+ex. In this example container is the grid container.
+ ```
+		<div class="container">
+			<div class="item item-1"></div>
+			<div class="item item-2"></div>
+			<div class="item item-3"></div>
+		</div>
+```
 **2. Grid Item:**
   The children (e.g. direct descendants) of the grid container.
   ex. Here the item elements are grid items, but sub-item isn't.
@@ -43,25 +43,17 @@ we used
 					<div class="item"></div>
 				</div>
 ```
-				
-	        c. Grid Line:
-		------------
-		The dividing lines that make up the structure of the grid.
-		  - vertical line (column grid line)
-			- horizontal line ( row grid line)
-			
-		d. Grid Track:
-		--------------
-		  The space between two adjacent grid lines. (You can think of them like the columns or rows of the grid).
-			
-		e. Grid Cell: (Single Unit)
-		------------
-		  The space between two adjacent row and two adjacent column grid lines.
-		
-		f. Grid Area:
-		-------------
-		The total space surrounded by four grid lines.
-		   - A grid area may be comprised of any number of grid cells.
+**3. Grid Line:**
+The dividing lines that make up the structure of the grid.
+- vertical line (column grid line)
+- horizontal line ( row grid line)		
+**4. Grid Track:**
+The space between two adjacent grid lines. (You can think of them like the columns or rows of the grid).
+**5. Grid Cell: (Single Unit)**
+The space between two adjacent row and two adjacent column grid lines.		
+**f. Grid Area:**		
+The total space surrounded by four grid lines.
+    - A grid area may be comprised of any number of grid cells.
 
 ### Properties for the Grid Container
 - display
