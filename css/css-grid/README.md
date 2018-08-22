@@ -65,7 +65,10 @@ The total space surrounded by four grid lines.
   - Values:
     - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
     - \<line-name\> \- an arbitrary name of your choosing
-- grid-template-rows
+- grid-template-rows: \<track-size\> ... | \<line-name\> \<track-size\> ...;
+  - Values:
+    - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
+    - \<line-name\> \- an arbitrary name of your choosing
 - grid-template-areas
 - grid-template
 - grid-column-gap
