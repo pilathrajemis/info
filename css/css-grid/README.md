@@ -84,7 +84,11 @@ The total space surrounded by four grid lines.
      }
 ```
 
-- grid-template-areas
+- grid-template-areas: "\<grid-area-name\> | . | none | ..."
+	- Values:
+	    - \<grid-area-name\> => the name of a grid area specified with grid-area
+	    - \.  => a period signifies an empty grid cell
+            - none => no grid areas are defined
 - grid-template
 - grid-column-gap
 - grid-row-gap
