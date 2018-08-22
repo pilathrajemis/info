@@ -5,8 +5,7 @@
 **Css layout**
 we used 
 1. table	
-2. floats
-3. positioning and inline-block
+2. floats positioning and inline-block
 
 **Solution.**
 1. Flexbox  (but it's one-dimentional.)
