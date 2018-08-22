@@ -66,12 +66,12 @@ The total space surrounded by four grid lines.
     - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
     - \<line-name\> \- an arbitrary name of your choosing
        - ex
-        ```
+```
 	   .container {
   		grid-template-columns: 40px 50px auto 50px 40px;
   		grid-template-rows: 25% 100px auto;
 	  }
-	```
+```
 - grid-template-rows: \<track-size\> ... | \<line-name\> \<track-size\> ...;
   - Values:
     - \<track-size\> \- can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)
