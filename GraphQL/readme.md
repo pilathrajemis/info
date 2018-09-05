@@ -7,16 +7,17 @@
 - increase mobile usage - need to efficient data-loading.
 - To fit the single API for different client and framework.
 - Fast and Rapid developement
+
 **Usage:**
 - GraphQL is almost everywhere, where used API(client&server).(any languange and frameworks).
-*Why best than rest:**
+**Why best than rest:**
 - GraphQL was develope for more flexibility and efficiency for client-server communication.
 -  Single End point.
 - Reslove the problem of Over and under fetching 
 - under fetching means (n+1) request problem, we need to send separate request for fetch additional data.
 - over fetching unnecessary information.
 
-** Rest ** - structure endpoint accrodingly to client's need.
+**Rest** - structure endpoint accrodingly to client's need.
 - d/b:  Any change in the UI that need to be adjust with Backend
 - GraphQL: no need to API changes when UI or requriment changes.
 
@@ -80,7 +81,6 @@ output:
 
 allPersons - Root field
 Everyting that followed by root field as "Payload".
-
 ex. ii.
 ```  {
 	allPersons{
@@ -120,12 +120,7 @@ createPerson(name: "Bob", age: 36) {
 }
 }
 ```
-
-
-
-
-
-. When we start working with variables, we need to do three things:
+- When we start working with variables, we need to do three things:
 1. Replace the static value in the query with $variableName
 2. Declare $variableName as one of the variables accepted by the query
 3. Pass variableName: value in the separate, transport-specific (usually JSON) variables dictionary
