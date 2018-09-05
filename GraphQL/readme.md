@@ -1,12 +1,12 @@
 ## GraphQL
 - What it GraphQL?
-. new API Standard that was invented by facebook and open source
-- declarative data fetching in the client.
-- single end point.
-- *Why Fb develope GraphQL:*
-- increase mobile usage - need to efficient data-loading.
-- To fit the single API for different client and framework.
-- Fast and Rapid developement
+   . new API Standard that was invented by facebook and open source
+   - declarative data fetching in the client.
+   - single end point.
+- **Why Fb develope GraphQL:**
+   - increase mobile usage - need to efficient data-loading.
+   - To fit the single API for different client and framework.
+   - Fast and Rapid developement
 
 **Usage:**
 - GraphQL is almost everywhere, where used API(client&server).(any languange and frameworks).
@@ -35,7 +35,7 @@
 **1. Schema :** It write with schema definition languange (SDL)
 	GraphQL has its own type system that’s used to define the schema of an API. 
 ex for defining simple type:
-type Person {  
+~~type Person {  
 name: String!
 age: Int!					
 }
@@ -43,6 +43,7 @@ age: Int!
 type Post {
 title: String!
 }
+```
 
 ! - means require field.
 
