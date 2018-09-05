@@ -35,7 +35,8 @@
 **1. Schema :** It write with schema definition languange (SDL)
 	GraphQL has its own type system that’s used to define the schema of an API. 
 ex for defining simple type:
-~~type Person {  
+```
+type Person {  
 name: String!
 age: Int!					
 }
