@@ -7,31 +7,31 @@
 - increase mobile usage - need to efficient data-loading.
 - To fit the single API for different client and framework.
 - Fast and Rapid developement
-*Usage:*
+**Usage:**
 - GraphQL is almost everywhere, where used API(client&server).(any languange and frameworks).
-*Why best than rest:*
+*Why best than rest:**
 - GraphQL was develope for more flexibility and efficiency for client-server communication.
 -  Single End point.
 - Reslove the problem of Over and under fetching 
 - under fetching means (n+1) request problem, we need to send separate request for fetch additional data.
 - over fetching unnecessary information.
 
-* Rest - structure endpoint accrodingly to client's need.
+** Rest ** - structure endpoint accrodingly to client's need.
 - d/b:  Any change in the UI that need to be adjust with Backend
 - GraphQL: no need to API changes when UI or requriment changes.
 
-*Benefits of schemas & type:*
+**Benefits of schemas & type:**
 - GraphQL use the strong type system do define the capabilities of API.
 - Schema severs contract b/w client and server.
 - Frontend and backend teams work indepently.	 
 
-*Fundamental operation in GraphQL:*
+**Fundamental operation in GraphQL:**
 * schema
 * query, 
 * mutation,
 * subscription
 
-1. Schema : It write with schema definition languange (SDL)
+**1. Schema :** It write with schema definition languange (SDL)
 	GraphQL has its own type system that’s used to define the schema of an API. 
 ex for defining simple type:
 type Person {  
@@ -60,7 +60,7 @@ author: Person!
 
 P one to many Post relation.
 
-2. Query: 
+**2. Query:**
 ex. i.                                
 ```   {
   allPersons {
@@ -100,7 +100,7 @@ ex.  iii. Query with arguments.
 return last two person that stored in the database.
 ```
 
-3. Mutation:
+**3. Mutation:**
 Next to requesting information from a server, the majority of applications also need some way of making changes to the 
 data that’s currently stored in the backend. 
 With GraphQL, these changes are made using so-called mutations. 
