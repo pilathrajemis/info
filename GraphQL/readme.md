@@ -49,7 +49,7 @@ title: String!
 ! - means require field.
 
 #### Adding releationship b/w types:
-
+```
 type Person {  
 name: String!
 age: Int!
@@ -60,6 +60,7 @@ type Post {
 title: String!
 author: Person!
 }
+```
 
 P one to many Post relation.
 
