@@ -1,0 +1,8 @@
+- Git delete branch: 
+    * git branch -d branchname
+    * git push origin :branchname
+- Git create new branch.
+    * git checkout -b branch name
+- Git Switch branch
+    git checkout branchname
+  

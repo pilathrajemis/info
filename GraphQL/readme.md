@@ -1,6 +1,6 @@
 ## GraphQL
 - What it GraphQL?
-   . new API Standard that was invented by facebook and open source
+   - new API Standard that was invented by facebook and open source
    - declarative data fetching in the client.
    - single end point.
 - **Why Fb develope GraphQL:**
@@ -112,17 +112,71 @@ There generally are three kinds of mutations:
 - updating existing data
 - deleting existing data
 
-"Mutations follow the same syntactical structure as queries, but they always need to start with the mutation keyword."
+> Mutations follow the same syntactical structure as queries, but they always need to start with the mutation keyword.
 ex.
 
 ```
 mutation {
 createPerson(name: "Bob", age: 36) {
-	name
-	age
+	id
 }
 }
 ```
+output:
+```
+	{
+	  data: {
+			createPerson:[
+				{id: "sdadsadsadfdfdf"}									
+			]
+    }
+  }
+```
+**4. Realtime Updates with Subscriptions **
+	- Another important requirement for many applications today is to have a realtime connection to the server in order to get immediately 
+	informed about important events. 
+	For this use case, GraphQL offers the concept of subscriptions.
+	- When a client subscribes to an event, it will initiate and hold 
+	a steady connection to the server. Whenever that particular event 
+	then actually happens, the server pushes the corresponding data to the client. 
+	Unlike queries and mutations that follow a typical “request-response-cycle”, 
+	subscriptions represent a stream of data sent over to the client.
+	
+	ex.
+```
+		subscription {
+			newPerson {
+				name
+				age
+			}
+		}
+```
+## GraphQL Server 
+ ** GraphQL Server common architecture:**
+  1. GraphQL server with connected database.
+	2. GraphQL server to integrated system.
+	3. GraphQL Server with a connected database and integrated system.
+	
+	1. GraphQL server with connected database.
+		   client --> communicate with single -> GraphQL Server. 
+	2. GraphQL server to integrated system.
+	    GraphQL act as the middle ware to fetch data from the all legacy system and services  that respond to client.
+	3. GraphQL Server with a connected database and integrated system.
+	 
+** Reslover function**
+  - GraphQL queries/mutations consists of set of fields
+	- GraphQL has a one resolver function per field.
+	- Purpose of resolver function to retrive data for its corresponding field.
+## GraphQL Client:
+  - GraphQL is great for frontend developers as data fetching complexity can be pushed to the server side.
+	- Client doesn't know where data is coming from.
+	- opportunity for new abstractions on the frontend.
+  - **Declarative data fetching**
+	    - describe data requriments
+      - display the information in the UI			
+
+
+
 - When we start working with variables, we need to do three things:
 1. Replace the static value in the query with $variableName
 2. Declare $variableName as one of the variables accepted by the query
@@ -138,12 +192,13 @@ friends {
 }
 }
 ```
-- Variable definitions
-* variables:- prefixed by $, followed by their type, in this case Episode.
-* variables must be either scalars, enums, or input object types
-* Default variables :- Default values can also be assigned to the variables in the query by adding the default value after the type declaration.
 
-```				
+- Variable definitions
+  . variables:- prefixed by $, followed by their type, in this case Episode.
+  . variables must be either scalars, enums, or input object types
+  . Default variables :- Default values can also be assigned to the variables in the query by adding the default value after the type declaration.
+
+```
 query HeroNameAndFriends($episode: Episode = JEDI) {
 hero(episode: $episode) {
 	name
@@ -153,6 +208,8 @@ hero(episode: $episode) {
 }
 }				
 ```
-- Directives:
+- **Directives:**
+   
+	 
 
 		
