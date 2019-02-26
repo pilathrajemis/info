@@ -5,4 +5,11 @@
     * git checkout -b branch name
 - Git Switch branch
     git checkout branchname
+    
+## Get Remote file and merge with local 
+```bash
+git fetch --all
+git reset --hard origin/master
+git pull origin master
+```
   
