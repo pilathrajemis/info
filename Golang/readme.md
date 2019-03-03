@@ -1,5 +1,6 @@
 ## GoLang
 ### Links
+- [A Tour of Go](https://tour.golang.org/welcome/1)
 - [Effective Go](https://golang.org/doc/effective_go.html)
 - [The Go Programming Language Specification](https://golang.org/ref/spec)
 - [Golang - wiki](https://github.com/golang/go/wiki)
