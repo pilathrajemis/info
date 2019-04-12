@@ -2,11 +2,14 @@
 ### Links
 - [A Tour of Go](https://tour.golang.org/welcome/1)
 - [Effective Go](https://golang.org/doc/effective_go.html)
+- [Learn golang series](https://golangbot.com/learn-golang-series/)
 - [The Go Programming Language Specification](https://golang.org/ref/spec)
 - [Golang - wiki](https://github.com/golang/go/wiki)
 - [gobyexample](https://gobyexample.com/)
 - [*Vs code with Go*](https://github.com/Microsoft/vscode-go/wiki/Go-tools-that-the-Go-extension-depends-on)
 - [The Go Playground](https://play.golang.org/)  used to run go program in online :)
+- [Getting started with Go CPU and memory profiling](https://flaviocopes.com/golang-profiling/)
+- [subtests](https://blog.golang.org/subtests)
 
 ### Comments
  - line comments //

@@ -23,6 +23,24 @@ OR If you are on some other branch:
 git reset --hard origin/<branch_name>
 ```
 
+## How get remote modified files into local
+1.  git checkout master
+2.  git pull origin master
+
+### Delete a Local GIT branch
+```shell
+git branch -d branch_name
+git branch -D branch_name
+```
+
+### how to commit the new code on new branch
+
+git checkout -b fix-deploy
+git add -A 
+git commit -m "deploy fix added"
+git push origin fix-deploy
+
+
 ## How to handle locally renamed file would affect remote.
  ```error
  Changes to be committed:
@@ -35,3 +53,4 @@ you have to git add sum-func/main.go
 the new file and git rm sum-func/main.go, 
 so git knows about it. 
 then it will show the same output in git status
+
