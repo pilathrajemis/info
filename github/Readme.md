@@ -54,3 +54,11 @@ the new file and git rm sum-func/main.go,
 so git knows about it. 
 then it will show the same output in git status
 
+## Contribution 
+- Fork it
+- Download your fork to your PC (git clone https://github.com/your_username/p1 && cd p1)
+- Create your feature branch (git checkout -b my-new-feature)
+- Make changes and add them (git add .)
+- Commit your changes (git commit -m 'Add some feature')
+- Push to the branch (git push origin my-new-feature)
+- Create new pull request
