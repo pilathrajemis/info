@@ -35,10 +35,12 @@ git branch -D branch_name
 
 ### how to commit the new code on new branch
 
+```cmd
 git checkout -b fix-deploy
 git add -A 
 git commit -m "deploy fix added"
 git push origin fix-deploy
+```
 
 
 ## How to handle locally renamed file would affect remote.
