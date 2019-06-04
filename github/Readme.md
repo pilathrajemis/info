@@ -54,6 +54,20 @@ the new file and git rm sum-func/main.go,
 so git knows about it. 
 then it will show the same output in git status
 
+## how to remove local commit
+
+Delete the most recent commit, keeping the work you've done:
+
+```cmd
+git reset --soft HEAD~1
+```
+
+Delete the most recent commit, destroying the work you've done:
+
+```cmd
+git reset --hard HEAD~1
+```
+
 ## Contribution 
 - Fork it
 - Download your fork to your PC (git clone https://github.com/your_username/p1 && cd p1)
