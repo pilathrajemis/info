@@ -1,8 +1,4 @@
-#
-
-git fetch --all
-git reset --hard origin/master
-git pull origin master
+# Github - useful cmd
 
 
 ## How do I force “git pull” to overwrite local files?
@@ -24,8 +20,10 @@ git reset --hard origin/<branch_name>
 ```
 
 ## How get remote modified files into local
-1.  git checkout master
-2.  git pull origin master
+```cmd
+git checkout master
+git pull origin master
+```
 
 ### Delete a Local GIT branch
 ```shell
@@ -33,7 +31,7 @@ git branch -d branch_name
 git branch -D branch_name
 ```
 
-### how to commit the new code on new branch
+### How to commit the new code on new branch
 
 ```cmd
 git checkout -b fix-deploy
@@ -56,7 +54,7 @@ the new file and git rm sum-func/main.go,
 so git knows about it. 
 then it will show the same output in git status
 
-## how to remove local commit
+## How to remove local commit
 
 Delete the most recent commit, keeping the work you've done:
 
