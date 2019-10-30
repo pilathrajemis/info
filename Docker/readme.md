@@ -37,11 +37,11 @@ docker images
 
  - run docker (attach mode)
  ```
-  docker run <image-name>
+  docker run <containerName or id>
   ```
   - run docker (detach mode) run in background.
    ```
-  docker run -d <image-name>
+  docker run -d <containerName or id>
   ```
   When you want run back to normal 
   ```
@@ -56,6 +56,43 @@ docker images
   ```
   docker exec <image-name> cat /etc/hosts
   ```  
+ ### docker tag
+ default tag: latest
   
-
+ ```
+  docker run <containerName or id:versionNo>
+```
+### Run STDIN
+By default docker run command doesn't listen any stdin. it run as non interactive mode.
+- interactive mode:
+```
+docker run -i <containerName or id>
+ ```
+ - interactive mode attach with terimal 
+ ```
+docker run -it <containerName or id>
+ ```
+ 
+ ###  Run Port mapping
+ ```
+ docker run -p <localport>:<dockerport> <containerName or id>
+ ```
+ ### Volume mapping
+ 
+ ```
+ docker run -v <localpath>:<containerpath> <containerName or id>
+ ```
+  ### set environment varibale 
+  ```
+ docker run -e Some_Env_name=value <containerName or id>
+ ```
+ ### Container logs
+ ``` 
+ docker logs <containerName or id>
+ ```
+ ### Container Inspect 
+  used get infromation about container.
+  ```
+  docker inspect <containerName or id>
+  ```
 
