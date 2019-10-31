@@ -129,7 +129,30 @@ docker run -it <containerName or id>
   - Docker has a *DNS server* - to reslove container name into IP address. 
   - IP address for container, may change when the system reboot.
   
+  ### Docker build
+  - create a dockerfile, example:
+  ```
+  FROM Ubuntu
+  RUN apt-get update && apt-get -y install python
+  RUN pip install flask flask-mysql
+  COPY . /opt/source-code
+  ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+  ```
+ - build image:
+   
+  ```
+  docker build dockerfile -t <namespace/image-name>
+  ````
+  
+  ### Volumes:
+   - two types of mounting
+     - volume mounting  (ex. docker run -v <data_vloume>:<default_data_path <image_name>)
+     - building mounting (ex. docker run -v <data_vloume_path>:<default_data_path <image_name>)
+     - using -v is old way use -mount
     
+  
+  
+  
      
   
 
