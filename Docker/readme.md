@@ -95,4 +95,42 @@ docker run -it <containerName or id>
   ```
   docker inspect <containerName or id>
   ```
+  
+  ## Networks (3 types of networks in docker)
+  |Bridge|none|host|
+  |------|---|-----|
+  |Default network|Container is not attached to any network | |
+  | private and internal network| | |
+  |created by docker| | |
+  |Ip address 170.17.0.0/16 ||
+  |Acess outside of container, using port mapping|No external access|if container uses host network, then it access without port mapping| 
+  
+  - By default cotainer attached into bridge network.
+  ```
+  docker run <image_name> 
+  ```
+  - You can reset it 
+  ```
+  docker run <image_name> --network=none 
+  or 
+  docker run <image_name> --network=host
+  ```
+  
+  ### network bridge 
+  -   By default docker will create one internal bridge network, which associated the IP address 172.17.0.0/16 series.
+  - You can create your own bridge network,  using network create command,
+  ```
+  docker network create -- driver bridge  -- subnet 182.18.0.0/16 custom-isolated-network-name  
+  ```
+  - list all networks
+  ```
+  docker network ls
+  ```
+  - Docker has a *DNS server* - to reslove container name into IP address. 
+  - IP address for container, may change when the system reboot.
+  
+    
+     
+  
+
 
