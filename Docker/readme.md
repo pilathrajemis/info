@@ -149,6 +149,29 @@ docker run -it <containerName or id>
      - volume mounting  (ex. docker run -v <data_vloume>:<default_data_path <image_name>)
      - building mounting (ex. docker run -v <data_vloume_path>:<default_data_path <image_name>)
      - using -v is old way use -mount
+     
+### Docker compose
+   - create a docker-compose.yml file and make up all containers.
+   - *links* used to link the two container.
+      - old way using compose file version 2 or 3.
+ ex: docker-compose.yml version 3:
+ ```yml
+ version:3
+ services:
+   redis:
+     image: redis
+   db:
+     image: postgres:9.4
+     ports:
+       - 5000:80  
+ ```
+ - make stack up: 
+ ```cmd
+ docker-compose up
+ ```
+ 
+ 
+   
     
   
   
