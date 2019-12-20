@@ -76,3 +76,13 @@ git reset --hard HEAD~1
 - Commit your changes (git commit -m 'Add some feature')
 - Push to the branch (git push origin my-new-feature)
 - Create new pull request
+## Renmame the folder
+```cmd
+git mv oldfolder newfolder
+git add -u newfolder
+git commit -m "changed the foldername whaddup"
+```
+**Renaming foldername to folderName on case insensitive file systems**
+```cmd
+git mv foldername tempname && git mv tempname folderName
+```
