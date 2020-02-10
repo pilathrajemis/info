@@ -21,6 +21,10 @@ you also need a good set of **benchmarks** to ensure your changes are having the
  ```cmd
  go build -gcflags '-m -m' ./main.go
  ```
+ 
+  ```cmd
+ go build -gcflags '-m=2' ./main.go
+ ```
   - **pointers point to data allocated on the heap**  - ~~pointers point to data allocated on the heap~~ :(
   
   ### Reference
