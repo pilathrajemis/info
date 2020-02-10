@@ -27,5 +27,26 @@ you also need a good set of **benchmarks** to ensure your changes are having the
  ```
   - **pointers point to data allocated on the heap**  - ~~pointers point to data allocated on the heap~~ :(
   
+  ### go Benchmrark
+  ```cmd
+  
+  go test -bench=.
+  ```
+  ```cmd
+  go test -bench=. -cpuprofile=cpu.prof -memprofile=mem.prof
+  ```
+  ### Go tool pprof
+   ```cmd
+   go tool pprof <binary> cpu/mem.prof
+   ```
+   **useful option:**
+   png
+   web
+   weblist .
+   top20 -cum
+    
+  
+  
+  
   ### Reference
   - https://segment.com/blog/allocation-efficiency-in-high-performance-go-services/
