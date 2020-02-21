@@ -67,7 +67,10 @@ Delete the most recent commit, destroying the work you've done:
 ```cmd
 git reset --hard HEAD~1
 ```
-
+## Log
+```cmd
+ git log --since=2019-09-30 --before=2019-10-18
+```
 ## Contribution 
 - Fork it
 - Download your fork to your PC (git clone https://github.com/your_username/p1 && cd p1)
@@ -76,7 +79,7 @@ git reset --hard HEAD~1
 - Commit your changes (git commit -m 'Add some feature')
 - Push to the branch (git push origin my-new-feature)
 - Create new pull request
-## Renmame the folder
+## Rename the folder
 ```cmd
 git mv oldfolder newfolder
 git add -u newfolder
