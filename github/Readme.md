@@ -89,3 +89,8 @@ git commit -m "changed the foldername whaddup"
 ```cmd
 git mv foldername tempname && git mv tempname folderName
 ```
+## Record the current state of the working directory and the index
+```cmd
+git stash 
+git stash list
+```
