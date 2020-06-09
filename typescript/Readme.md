@@ -27,7 +27,7 @@ var isUpdated: boolean = true;// Boolean variable
  - TypeScript follows the same rules as JavaScript for variable declarations. 
  - Variables can be declared using: **var**, **let**, and **const**
  - variables declared with **let** have a block-scope
-  **let scope ex**
+ **let scope ex**
   ```js
   let num1:number = 1; 
     
@@ -69,7 +69,7 @@ let fourth: number = 0b111001;// binary
 - **Template strings** are used to embed expressions into strings.
 - ex:
 ```js
-let employeeName:string = "John Smith"; 
+let employeeName:string = 'John Smith'; 
 let employeeDept:string = "Finance"; 
 
 // Pre-ES6 
