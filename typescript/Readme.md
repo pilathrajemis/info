@@ -81,3 +81,36 @@ let employeeDesc2: string = `${employeeName} works in the ${employeeDept} depart
 console.log(employeeDesc1);//John Smith works in the Finance department. 
 console.log(employeeDesc2);//John Smith works in the Finance department. 
 ```
+### Boolean
+- true/false
+```js
+let isPresent:boolean = true;
+```
+### Array
+- There are two ways to declare an array:
+```js
+// 1. Using square brackets.
+let fruits: string[] = ['Apple', 'Orange', 'Banana'];
+// 2. Using a generic array type, Array<elementType>.
+let fruits: Array<string> = ['Apple', 'Orange', 'Banana'];
+```
+- ex for multi type array.
+```js
+let values: (string | number)[] = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
+// or 
+let values: Array<string | number> = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
+```
+### Tuple
+- Tuple is a new data type which includes set of values of different data types.
+ex.
+```js
+var empId: number = 1;
+var empName: string = "Steve";        
+
+// Tuple type variable 
+var employee: [number, string] = [1, "Steve"];
+var person: [number, string, boolean] = [1, "Steve", true];
+
+var user: [number, string, boolean, number, string];// declare tuple variable
+user = [1, "Steve", true, 20, "Admin"];// initialize tuple variable
+```
