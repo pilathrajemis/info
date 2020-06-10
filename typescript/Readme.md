@@ -116,3 +116,26 @@ var person: [number, string, boolean] = [1, "Steve", true];
 var user: [number, string, boolean, number, string];// declare tuple variable
 user = [1, "Steve", true, 20, "Admin"];// initialize tuple variable
 ```
+### enum
+```js
+enum PrintMedia {
+  Newspaper = 1,
+  Newsletter,
+  Magazine,
+  Book
+}
+console.log(PrintMedia)
+```
+output
+```js
+{
+  '1': 'Newspaper',
+  '2': 'Newsletter',
+  '3': 'Magazine',
+  '4': 'Book',
+  Newspaper: 1,
+  Newsletter: 2,
+  Magazine: 3,
+  Book: 4 
+}
+```
