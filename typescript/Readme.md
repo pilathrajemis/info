@@ -109,6 +109,8 @@ var empName: string = "Steve";
 
 // Tuple type variable 
 var employee: [number, string] = [1, "Steve"];
+var employees: [number, string][]; // array of tuples
+employees = [[1, "Steve"], [2, "Bill"], [3, "Jeff"]];
 var person: [number, string, boolean] = [1, "Steve", true];
 
 var user: [number, string, boolean, number, string];// declare tuple variable
