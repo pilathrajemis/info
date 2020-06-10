@@ -116,7 +116,14 @@ var person: [number, string, boolean] = [1, "Steve", true];
 var user: [number, string, boolean, number, string];// declare tuple variable
 user = [1, "Steve", true, 20, "Admin"];// initialize tuple variable
 ```
-### enum
+### Enum
+In simple words, enums allow us to declare a set of named constants i.e. a collection of related values that can be numeric or string values.
+
+There are three types of enums:
+
+1. Numeric enum
+2. String enum
+3. Heterogeneous enum
 ```js
 enum PrintMedia {
   Newspaper = 1,
