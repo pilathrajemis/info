@@ -19,3 +19,5 @@
 ## React Event:
 - React events are written in camelCase syntax.
 - onClick={shoot}  instead of onClick="shoot()".
+- passing arguments 
+- onClick={() => this.shoot("Goal")}
