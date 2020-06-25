@@ -15,3 +15,7 @@
   5. componentDidUpdate()
  ### Unmounting
    1. componentWillUnmount()
+
+## React Event:
+- React events are written in camelCase syntax.
+- onClick={shoot}  instead of onClick="shoot()".
