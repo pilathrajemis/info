@@ -9,9 +9,9 @@
 
 ### Updating
   1. getDerivedStateFromProps(props, state) - return state
-  2. componentShouldUpdate()  - return boolean.
+  2. shouldComponentUpdate()  - return boolean.
   3. render()
-  4. componentBeforeUpdate(prevprops,prevstate)
+  4. getSnapshotBeforeUpdate(prevprops,prevstate)
   5. componentDidUpdate()
  ### Unmounting
    1. componentWillUnmount()
