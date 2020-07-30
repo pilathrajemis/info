@@ -94,3 +94,12 @@ git mv foldername tempname && git mv tempname folderName
 git stash 
 git stash list
 ```
+## Rebase
+git log --oneline
+git rebase -i {Id before my ids}
+change to "s" any to get rid of - Need to leave first commit.
+save / come out
+remove any stray logs / change etc...
+git push --force origin {branch}
+
+
