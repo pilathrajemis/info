@@ -11,7 +11,7 @@ go mod tidy
 go get github.com/aws/aws-sdk-go
 go get github.com/aws/aws-sdk-go@latest
 go get github.com/aws/aws-sdk-go@v1.3.0
-go get github.com/aws/aws-sdk-go@b811ea8391353a33585662f5f76d42acb7614bb6 //commithash
+go get github.com/aws/aws-sdk-go@b811ea8391353a33585662f5f76d42acb7614bb6 //exact commit hash
 ```
 ## download all dependencies
 go get ./...
