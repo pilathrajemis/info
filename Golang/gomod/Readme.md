@@ -13,6 +13,12 @@ go get github.com/aws/aws-sdk-go@latest
 go get github.com/aws/aws-sdk-go@v1.3.0
 go get github.com/aws/aws-sdk-go@b811ea8391353a33585662f5f76d42acb7614bb6 //exact commit hash
 ```
+
+## check available version to specific modules
+```cmd
+go list -m -versions  github.com/aws/aws-sdk-go
+```
+
 ## download all dependencies
 go get ./...
 - auto download the packages when run any of the below commands
