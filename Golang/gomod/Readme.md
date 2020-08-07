@@ -26,7 +26,8 @@ go mod why github.com/aws/aws-sdk-go
 
 
 ## download all dependencies
-go get ./...
+- go mod download
+- go get ./...
 - auto download the packages when run any of the below commands
 ```cmd
 go run
