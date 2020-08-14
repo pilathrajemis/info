@@ -17,8 +17,8 @@
 - use js object for style.
 ```js
 function App(){
-const timeOfDay = "Morning"
-return (
+  const timeOfDay = "Morning"
+  return (
     <h1 style={{color:"#ff0000", backgroundColor:"#aa0000"}} className="title1">Good {timeOfDay}!</h1>
   )
 }
