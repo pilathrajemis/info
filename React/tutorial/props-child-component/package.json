@@ -1,8 +1,8 @@
 {
   "name": "co6ba-7b7cc567c2a5",
   "dependencies": {
-    "react": "16.4.2",
-    "react-dom": "16.4.2"
+    "react": "16.4.0",
+    "react-dom": "16.13.0"
   },
   "devDependencies": {
     "webpack": "^2.0",
