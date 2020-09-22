@@ -106,5 +106,5 @@ git push --force origin {branch}
 ## turn off CRLF
 ```
 git config --global core.autocrlf false
-``
+```
 
