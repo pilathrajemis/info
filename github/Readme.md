@@ -103,4 +103,8 @@ save / come out
 remove any stray logs / change etc...
 git push --force origin {branch}
 ```
+## turn off CRLF
+```
+git config --global core.autocrlf false
+``
 
