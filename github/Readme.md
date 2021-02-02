@@ -107,4 +107,10 @@ git push --force origin {branch}
 ```
 git config --global core.autocrlf false
 ```
+## fetch Remote branch
+```
+git fetch origin 'your_remote_branch':'local_branch_name'
+```
+- This above command will fetch a remote branch and create a new local branch with the local_branch_name and track the remote branch inside that local branch. 
+
 
