@@ -25,6 +25,11 @@ docker stop <containerId or name>
 ```
   docker rm <containerId or name>
 ```
+- Stop all runing container list of all running containers
+```
+docker stop $(docker ps -q)
+```
+- 
 - list all images
 ```
 docker images
