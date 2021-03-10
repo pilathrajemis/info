@@ -1,7 +1,7 @@
 ## build
 
 ```cmd
-docjer build -t my-app:v1
+docker build -t my-app:v1
 docker tag my-app:v1 pilathraj/my-app:v1
 docker push pilathraj/my-app:v1
 ```
