@@ -1,3 +1,6 @@
+## Create a repository in hub.docker.com.
+Login into hub.docker.com and create a new repository named as my-app.
+
 ## build
 
 ```cmd
