@@ -29,7 +29,6 @@ docker stop <containerId or name>
 ```
 docker stop $(docker ps -q)
 ```
-- 
 - list all images
 ```
 docker images
