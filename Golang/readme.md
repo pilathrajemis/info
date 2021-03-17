@@ -439,8 +439,8 @@ res, err := getInfo(url)
 ### Named result parameters
 ```go
 func getInfo(url string) (name string, err error) {
-  name := 'test'
-	return //no arguments
+  name = 'test'
+  return //no arguments
 }
 
 res, err := getInfo(url)
