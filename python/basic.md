@@ -33,3 +33,26 @@ Banana Cherry
 1 2 3
 OrangeOrangeOrange
 ```
+### Variable scoping
+```python
+x = "awesome"
+
+def myfunc():
+  global x, z
+  x = "fantastic"
+  y = "testing"
+  z = "global variable create inside a function"
+
+myfunc()
+
+print("x: " + x)
+#print("Access local variable " + y) #NameError: name 'y' is not defined
+print("z: " + z)
+#print("Access undefined variables ", xyz) #NameError: name 'xyz' is not defined
+
+```
+### output
+```
+x: fantastic
+z: global variable create inside a function
+```
