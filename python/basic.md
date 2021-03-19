@@ -66,7 +66,7 @@ z: global variable created inside a function
 |Numeric Types:|	int, float, complex | i,f,c = 10, 10.10, 10+i10|
 |Sequence Types:|	list, tuple, range| l, t, r =["apple", "banana", "cherry"], ("apple", "banana", "cherry"), range(1,5)|
 |Mapping Type:|	dict| x = {"name" : "John", "age" : 36}|
-|Set Types:	set, frozenset| s, f =  {"apple", "banana", "cherry"}, frozenset({"apple", "banana", "cherry"})|
+|Set Types:|	set, frozenset| s, f =  {"apple", "banana", "cherry"}, frozenset({"apple", "banana", "cherry"})|
 |Boolean Type:|	bool| b =True|
 |Binary Types:|	bytes, bytearray, memoryview| b, ba, mv = b"Hello", bytearray(5), memoryview(bytes(5))|
 
