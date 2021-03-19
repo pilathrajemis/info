@@ -4,6 +4,7 @@
 a = "test"
 x, y, z, n = "Orange", "Banana", "Cherry", 5
 s = t = v = "Orange"
+i,f,cx = 10, 10.10, 10+10j
 # Single line command
 
 """"
@@ -23,6 +24,7 @@ print(n)
 print(a)
 print(b,c,d)
 print(s+t+v) #Concatenation Operator
+print(i,f,cx)
 ```
 ## Output
 ```
@@ -32,6 +34,7 @@ Banana Cherry
 [1, 2, 3]
 1 2 3
 OrangeOrangeOrange
+10 10.1 (10+10j)
 ```
 ### Variable scoping
 ```python
@@ -61,9 +64,9 @@ z: global variable created inside a function
 |-----------|-----|--------|
 |Text Type:|	str| s = "Pilath"  (or) S= 'raj'|
 |Numeric Types:|	int, float, complex | i,f,c = 10, 10.10, 10+i10|
-|Sequence Types:|	list, tuple, range|
-|Mapping Type:|	dict|
-|Set Types:	set, frozenset|
-|Boolean Type:|	bool| b =true|
-|Binary Types:|	bytes, bytearray, memoryview|
+|Sequence Types:|	list, tuple, range| l, t, r =["apple", "banana", "cherry"], ("apple", "banana", "cherry"), range(1,5)|
+|Mapping Type:|	dict| x = {"name" : "John", "age" : 36}|
+|Set Types:	set, frozenset| s, f =  {"apple", "banana", "cherry"}, frozenset({"apple", "banana", "cherry"})|
+|Boolean Type:|	bool| b =True|
+|Binary Types:|	bytes, bytearray, memoryview| b, ba, mv = b"Hello", bytearray(5), memoryview(bytes(5))|
 
