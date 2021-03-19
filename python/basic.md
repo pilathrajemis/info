@@ -60,7 +60,7 @@ z: global variable created inside a function
 |Description| type| example|
 |-----------|-----|--------|
 |Text Type:|	str| s = "Pilath"  (or) S= 'raj'|
-|Numeric Types:	int, float, complex | i,f,c = 10, 10.10, 10+i10|
+|Numeric Types:|	int, float, complex | i,f,c = 10, 10.10, 10+i10|
 |Sequence Types:|	list, tuple, range|
 |Mapping Type:|	dict|
 |Set Types:	set, frozenset|
