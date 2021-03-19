@@ -56,3 +56,14 @@ print("z: " + z)
 x: fantastic
 z: global variable created inside a function
 ```
+### Data types
+|Description| type| example|
+|-----------|-----|--------|
+|Text Type:|	str| s = "Pilath"  (or) S= 'raj'|
+|Numeric Types:	int, float, complex | i,f,c = 10, 10.10, 10+i10|
+|Sequence Types:|	list, tuple, range|
+|Mapping Type:|	dict|
+|Set Types:	set, frozenset|
+|Boolean Type:|	bool| b =true|
+|Binary Types:|	bytes, bytearray, memoryview|
+
