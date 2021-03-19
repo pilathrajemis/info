@@ -63,7 +63,7 @@ z: global variable created inside a function
 ### Data types
 |Description| type| example|
 |-----------|-----|--------|
-|Text Type:|	str| s = "Pilath"  (or) S= 'raj' or MS=""Multi line string"""|
+|Text Type:|	str| s = "Pilath"  (or) S= 'raj' or MS="""Multi line string"""|
 |Numeric Types:|	int, float, complex | i,f,c = 10, 10.10, 10+10j|
 |Sequence Types:|	list, tuple, range| l, t, r =["apple", "banana", "cherry"], ("apple", "banana", "cherry"), range(1,5)|
 |Mapping Type:|	dict| x = {"name" : "John", "age" : 36}|
