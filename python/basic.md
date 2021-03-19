@@ -1,3 +1,5 @@
+## Basics
+```python
 #Variable Declaration
 a = "test"
 x, y, z, n = "Orange", "Banana", "Cherry", 5
