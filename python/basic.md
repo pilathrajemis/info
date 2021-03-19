@@ -1,5 +1,3 @@
-## Python Basics
-```python 
 #Variable Declaration
 a = "test"
 x, y, z, n = "Orange", "Banana", "Cherry", 5
@@ -24,7 +22,8 @@ print(n)
 print(a)
 print(b,c,d)
 print(s+t+v) #Concatenation Operator
-print(i,f,cx)
+print(i,f,cx, end= ": ")
+print(type(i),type(f),type(cx))
 ```
 ## Output
 ```
@@ -34,7 +33,7 @@ Banana Cherry
 [1, 2, 3]
 1 2 3
 OrangeOrangeOrange
-10 10.1 (10+10j)
+10 10.1 (10+10j): <class 'int'> <class 'float'> <class 'complex'>
 ```
 ### Variable scoping
 ```python
