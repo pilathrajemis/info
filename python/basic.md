@@ -54,5 +54,5 @@ print("z: " + z)
 ### output
 ```
 x: fantastic
-z: global variable create inside a function
+z: global variable created inside a function
 ```
