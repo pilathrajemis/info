@@ -7,6 +7,7 @@ print(n[1]) # 1  -> index start from Zero
 print(n[1:3]) # 12  -> Start and end-1 index, Print from 1 to 2 index 
 print(n[6:]) # 6789
 print(n[:5]) # 01234
+print(n[-5:-2]) # 567
 ```
 ## String function
 ```python
@@ -38,6 +39,6 @@ print(myorder.format(quantity, itemno, price)) #I want to pay 49.95 dollars for 
 txt = "apple, banana, cherry"
 print(txt.split(", ", 1)) # ['apple', 'banana, cherry']
 print(txt.rsplit(", ", 1)) # ['apple, banana', 'cherry'] <- right to left
-print("50".zfill(10)) #0000000050
+print("50".zfill(10)) # 0000000050
 ```
 
