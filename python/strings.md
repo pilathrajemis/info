@@ -23,4 +23,9 @@ for c in "cse":
   s
   e
   """
+print(s.upper()) # PILATHRAJ
+print(" Hello Pilathraj ".strip()) # trim the whitespace Hello Pilathraj
+print(s.count(a) # 2 <- how many times substring print in the string s.
+print(s.find("raj") # 6 <- retrun starting position
 ```
+
