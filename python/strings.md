@@ -1,5 +1,5 @@
 # Strings
-## 1. index Slice
+## 1. Index Slice
 ```python
 n = "0123456789"
 print(n) #0123456789
